@@ -48,10 +48,10 @@
             /* Sidebar */
             .sidebar {
                 position: fixed;
-                top: 70px; /* Posisi sidebar dimulai setelah header */
+                top: 0%; /* Posisi sidebar dimulai setelah header */
                 left: -250px; /* Hidden by default */
                 width: 250px;
-                height: calc(100% - 70px); /* Sesuaikan tinggi sidebar agar menutupi sisa layar */
+                height: 100%; /* Sesuaikan tinggi sidebar agar menutupi sisa layar */
                 background-color: #3498db;
                 color: #fff;
                 overflow-y: auto;
@@ -62,6 +62,7 @@
 
             .sidebar a {
                 display: block;
+                padding-top: 2000px;
                 color: #ddd;
                 padding: 10px 20px;
                 text-decoration: none;
@@ -78,7 +79,8 @@
                 position: absolute;
                 top: 10px;
                 right: 10px;
-                font-size: 20px;
+                font-size: 50px;
+                margin-right: 10px;
                 cursor: pointer;
                 color: #fff;
             }
@@ -102,6 +104,10 @@
                 background-color: #2c88c5;
             }
 
+            .sidebar .pilihanMenu {
+                margin-top: 55px;
+            }
+
             /* Content Area */
             .content {
                 margin: 100px 20px;
@@ -116,7 +122,21 @@
                 left: 0; /* Sidebar muncul saat aktif */
             }
 
+            /* Overlay */
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Transparan hitam */
+                z-index: 1000;
+                display: none; /* Sembunyikan overlay secara default */
+            }
 
+            .overlay.active {
+                display: block; /* Tampilkan overlay saat aktif */
+            }
         </style>
     </head>
     <body>
@@ -129,22 +149,34 @@
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             
-            <a href="#">Kelola Kamar</a>
+            <!--<span class="close-btn" onclick="toggleSidebar()">×</span>-->
+            
+            <div class="pilihanMenu">
+            <a href="kelolaKamar.jsp">Kelola Kamar</a>
             <a href="#">Check-In</a>
             <a href="#">Check-Out</a>
             <a href="#">Detail Pembayaran</a>
             <a href="login.jsp">Logout</a>
             <a href="#">Admin</a>
+            </div>
         </div>
         
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+        
         <!-- Area Konten -->
-
+        <div class="content">
+            <h1>Selamat Datang di Hotel Management System</h1>
+            <p>Konten halaman utama akan ditampilkan di sini.</p>
+        </div>
 
         <!-- Script untuk toggle Sidebar -->
         <script>
             function toggleSidebar() {
                 const sidebar = document.getElementById('sidebar');
+                const overlay = document.getElementById('overlay');
                 sidebar.classList.toggle('active');
+                overlay.classList.toggle('active');
             }
         </script>
     </body>
