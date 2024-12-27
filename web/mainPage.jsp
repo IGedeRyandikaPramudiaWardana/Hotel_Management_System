@@ -122,24 +122,42 @@
         <div class="sidebar" id="sidebar">
             <span class="close-btn" onclick="toggleSidebar()">×</span>
             <a href="#">Dashboard</a>
-            <a href="#">Reservations</a>
+
+            <!-- Menu Dropdown untuk Reservations -->
+            <a href="#" onclick="toggleDropdown()">Reservations ▾</a>
+            <div id="reservation-menu" style="display: none; padding-left: 20px;">
+                <a href="checkin.html">Check-In</a>
+                <a href="checkOut.jsp">Check-Out</a>
+            </div>
+
             <a href="#">Rooms</a>
             <a href="#">Customers</a>
             <a href="#">Reports</a>
             <a href="#">Settings</a>
         </div>
+
         
         <div class="content">
             <h1>Selamat Datang di Halaman Utama!</h1>
             <p>Login berhasil, Anda sekarang berada di halaman utama.</p>
         </div>
-        
+         
         <script>
             function toggleSidebar() {
                 const sidebar = document.getElementById('sidebar');
                 sidebar.classList.toggle('active');
             }
+
+            function toggleDropdown() {
+                const menu = document.getElementById('reservation-menu');
+                if (menu.style.display === "none") {
+                    menu.style.display = "block"; // Tampilkan submenu
+                } else {
+                    menu.style.display = "none";  // Sembunyikan submenu
+                }
+            }
         </script>
+
     </body>
 </html>
 
