@@ -48,7 +48,7 @@
             /* Sidebar */
             .sidebar {
                 position: fixed;
-                top: 0; /* Posisi sidebar dimulai setelah header */
+                top: 0%; /* Posisi sidebar dimulai setelah header */
                 left: -250px; /* Hidden by default */
                 width: 250px;
                 height: 100%; /* Sesuaikan tinggi sidebar agar menutupi sisa layar */
@@ -62,8 +62,9 @@
 
             .sidebar a {
                 display: block;
-                padding: 10px 20px;
+                padding-top: 2000px;
                 color: #ddd;
+                padding: 10px 20px;
                 text-decoration: none;
                 border-bottom: 1px solid #3498db;
                 box-sizing: border-box; /* Pastikan padding tidak menyebabkan pergeseran */
@@ -147,15 +148,16 @@
         
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
+            
+            <!--<span class="close-btn" onclick="toggleSidebar()">×</span>-->
+            
             <div class="pilihanMenu">
-                <!-- Menu Main Page -->
-                <a href="#" onclick="loadMainPage()">Main Page</a>
-                <a href="#" onclick="loadContent('kelolaKamar.jsp')">Kelola Kamar</a>
-                <a href="#">Check-In</a>
-                <a href="#">Check-Out</a>
-                <a href="#">Detail Pembayaran</a>
-                <a href="login.jsp">Logout</a>
-                <a href="#">Admin</a>
+            <a href="kelolaKamar.jsp">Kelola Kamar</a>
+            <a href="#">Check-In</a>
+            <a href="#">Check-Out</a>
+            <a href="#">Detail Pembayaran</a>
+            <a href="login.jsp">Logout</a>
+            <a href="#">Admin</a>
             </div>
         </div>
         
@@ -163,7 +165,7 @@
         <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
         
         <!-- Area Konten -->
-        <div class="content" id="content-area">
+        <div class="content">
             <h1>Selamat Datang di Hotel Management System</h1>
             <p>Konten halaman utama akan ditampilkan di sini.</p>
         </div>
@@ -175,26 +177,6 @@
                 const overlay = document.getElementById('overlay');
                 sidebar.classList.toggle('active');
                 overlay.classList.toggle('active');
-            }
-
-            // Fungsi untuk memuat halaman JSP secara dinamis
-            function loadContent(page) {
-                const xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        document.getElementById("content-area").innerHTML = this.responseText;
-                    }
-                };
-                xhttp.open("GET", page, true);
-                xhttp.send();
-            }
-
-            // Fungsi untuk menampilkan kembali halaman utama
-            function loadMainPage() {
-                document.getElementById("content-area").innerHTML = `
-                    <h1>Selamat Datang di Hotel Management System</h1>
-                    <p>Konten halaman utama akan ditampilkan di sini.</p>
-                `;
             }
         </script>
     </body>

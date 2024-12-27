@@ -123,6 +123,7 @@
                     <th>Tipe Bed</th>
                     <th>Harga (Rupiah)</th>
                     <th>Status</th>
+                    
                 </tr>
             </thead>
             <tbody>
