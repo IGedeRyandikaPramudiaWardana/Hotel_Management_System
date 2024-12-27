@@ -102,7 +102,7 @@
             <h1>Selamat datang di</br>
                 Hotel Management System!
             </h1>
-            <h2>Silahkan Login</h2>
+            <h2>Silakan Login</h2>
             
             <div class="login">
                 <form action="process.jsp" method="post">

@@ -7,145 +7,134 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Check Out</title>
-        <link rel="stylesheet" type="text/css" href="style.css"> <!-- Masukkan file CSS ini -->
-        
-        <style>
-            /* CSS Desain untuk Form Check-Out */
-            body {
-                font-family: 'Roboto', sans-serif;
-                background-color: #e0e0e0;
-                margin: 0;
-                padding: 0;
-            }
-
-            .container {
-                width: 80%;
-                margin: 0 auto;
-                padding: 20px;
-                background: #f2f2f2;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            header {
-                text-align: center;
-                margin-bottom: 20px;
-                font-size: 24px;
-            }
-
-            label {
-                font-weight: bold;
-                margin-bottom: 5px;
-                display: block;
-            }
-
-            input[type="text"] {
-                width: calc(25% - 20px);
-                padding: 8px;
-                margin-bottom: 15px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-            }
-
-            button {
-                padding: 10px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            button.confirm {
-                background-color: #4CAF50;
-                color: white;
-            }
-
-            button.clear {
-                background-color: #f44336;
-                color: white;
-            }
-
-            button.back {
-                background-color: #008CBA;
-                color: white;
-            }
-
-            button:hover {
-                opacity: 0.8;
-            }
-
-            .table-container {
-                margin-top: 20px;
-                overflow-x: auto;
-            }
-
-            .table-container table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            .table-container th, .table-container td {
-                padding: 8px;
-                text-align: left;
-                border: 1px solid #ddd;
-            }
-
-            .table-container th {
-                background-color: #4CAF50;
-                color: white;
-            }
-
-            .table-container tr:nth-child(even) {
-                background-color: #f2f2f2;
-            }
-
-            .table-container tr:hover {
-                background-color: #ddd;
-            }
-            </style>
-    </head>
-    <body>
-    <header>Check-OUT</header>
+<head>
+    <title>Customer Check-OUT</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px 40px;
+        }
+        .form-container h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #333333;
+        }
+        .form-group input, 
+        .form-group select, 
+        .form-group button {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 8px;
+        }
+        .form-group input:focus, 
+        .form-group select:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        .button-group {
+            text-align: center;
+        }
+        .button-group button {
+            width: 30%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+            color: #ffffff;
+        }
+        .button-group button:hover {
+            opacity: 0.9;
+        }
+        .btn-confirm {
+            background-color: #28a745;
+        }
+        .btn-reset {
+            background-color: #dc3545;
+        }
+        .btn-back {
+            background-color: #007bff;
+        }
+        .banner {
+            text-align: center;
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+        }
+    </style>
+</head>
+<body>
     <div class="form-container">
-        <div>
-            <label for="nama">Nama Pelanggan</label>
-            <input type="text" id="nama" placeholder="Masukkan Nama">
+        <!-- Banner -->
+        <div class="banner">
+            <h1>Manajemen Reservasi Hotel</h1>
         </div>
-        <div>
-            <label for="checkin">Tanggal Check-IN</label>
-            <input type="text" id="checkin" placeholder="yyyy-mm-dd">
-        </div>
-        <div>
-            <label for="checkout">Tanggal Check-OUT</label>
-            <input type="text" id="checkout" placeholder="yyyy-mm-dd">
-        </div>
-        <div>
-            <label for="telepon">Nomor Telepon</label>
-            <input type="text" id="telepon" placeholder="Nomor Telepon">
-        </div>
-        <div>
-            <label for="harga">Harga Per-Hari</label>
-            <input type="text" id="harga" placeholder="Rp">
-        </div>
-        <div>
-            <label for="jumlah">Jumlah Hari Menginap</label>
-            <input type="text" id="jumlah" placeholder="Hari">
-        </div>
-        <div>
-            <label for="total">Total Harga</label>
-            <input type="text" id="total" placeholder="Rp">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="text" id="email" placeholder="Alamat Email">
-        </div>
+        <!-- Judul Halaman -->
+        <h1>Customer Check-OUT</h1>
+        
+        <!-- Form Check-OUT -->
+        <form action="CheckOUTHandler.jsp" method="post">
+            <div class="form-group">
+                <label for="nama">Nama Pelanggan:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama pelanggan" required>
+            </div>
+            <div class="form-group">
+                <label for="checkinDate">Tanggal Check-IN:</label>
+                <input type="date" id="checkinDate" name="checkinDate" required>
+            </div>
+            <div class="form-group">
+                <label for="checkoutDate">Tanggal Check-OUT:</label>
+                <input type="date" id="checkoutDate" name="checkoutDate" required>
+            </div>
+            <div class="form-group">
+                <label for="telepon">Nomor Telepon:</label>
+                <input type="text" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+            </div>
+            <div class="form-group">
+                <label for="harga">Harga Per-Hari:</label>
+                <input type="text" id="harga" name="harga" placeholder="Masukkan harga per hari" required>
+            </div>
+            <div class="form-group">
+                <label for="jumlahHari">Jumlah Hari Menginap:</label>
+                <input type="number" id="jumlahHari" name="jumlahHari" placeholder="Masukkan jumlah hari" required>
+            </div>
+            <div class="form-group">
+                <label for="totalHarga">Total Harga:</label>
+                <input type="text" id="totalHarga" name="totalHarga" placeholder="Total harga" readonly>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Masukkan alamat email" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" class="btn-confirm">Konfirmasi</button>
+                <button type="reset" class="btn-reset">Bersihkan</button>
+                <button type="button" class="btn-back" onclick="window.history.back();">Kembali</button>
+            </div>
+        </form>
     </div>
-    <button class="konfirmasi">Konfirmasi</button>
-    <button class="clear">Clear</button>
-
-    
 </body>
 </html>

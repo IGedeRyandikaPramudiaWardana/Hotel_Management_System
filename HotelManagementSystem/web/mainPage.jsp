@@ -153,7 +153,7 @@
                 <a href="#" onclick="loadContent('kelolaKamar2.jsp')">Kelola Kamar</a>
                 <a href="#" onclick="loadContent('checkin.jsp')">Check-In</a>
                 <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
-                <a href="#">Detail Pembayaran</a>
+                <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
                 <a href="login.jsp">Logout</a>
                 <a href="#">Admin</a>
             </div>
