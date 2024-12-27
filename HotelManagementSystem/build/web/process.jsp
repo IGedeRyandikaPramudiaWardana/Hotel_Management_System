@@ -44,7 +44,7 @@
             if ("admin".equalsIgnoreCase(akses)) {
                 response.sendRedirect("mainPage.jsp"); // Halaman untuk admin
             } else if ("user".equalsIgnoreCase(akses)) {
-                response.sendRedirect("mainPage.jsp"); // Halaman untuk user
+                response.sendRedirect("mainPage2.jsp"); // Halaman untuk user
             }
         } else {
     %>
