@@ -150,7 +150,7 @@
             <div class="pilihanMenu">
                 <!-- Menu Main Page -->
                 <a href="#" onclick="loadMainPage()">Main Page</a>
-                <a href="#" onclick="loadContent('kelolaKamar.jsp')">Kelola Kamar</a>
+                <a href="#" onclick="loadContent('kelolaKamar2.jsp')">Kelola Kamar</a>
                 <a href="#">Check-In</a>
                 <a href="#">Check-Out</a>
                 <a href="#">Detail Pembayaran</a>
