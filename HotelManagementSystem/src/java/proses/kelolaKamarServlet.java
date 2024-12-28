@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  *
  * @author ASUS
  */
-@WebServlet(name = "kelolaKamar", urlPatterns = {"/kelolaKamar"})
+@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/kelolaKamarServlet"})
 public class kelolaKamarServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(kelolaKamarServlet.class.getName());
@@ -35,7 +35,7 @@ public class kelolaKamarServlet extends HttpServlet {
         LOGGER.info("doGet called");
         List<kamar> kamarList = kamarCon.getAllKamar();
         request.setAttribute("kamarList", kamarList);
-        request.getRequestDispatcher("stok.jsp").forward(request, response);
+        request.getRequestDispatcher("kelolaKamar.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

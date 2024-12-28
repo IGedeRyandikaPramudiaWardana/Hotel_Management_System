@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
+<%@page import="java.util.list" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -128,57 +129,30 @@
             </thead>
             <tbody>
                 <%
-                    // Koneksi ke database
-                    Connection conn = null;
-                    Statement stmt = null;
-                    ResultSet rs = null;
-
-                    try {
-                        // Load driver
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-
-                        // Ubah username dan password sesuai dengan database Anda
-                        String url = "jdbc:mysql://localhost:3306/test3";
-                        String user = "root"; // username MySQL Anda
-                        String password = ""; // password MySQL Anda (kosong jika default)
-
-                        conn = DriverManager.getConnection(url, user, password);
-                        stmt = conn.createStatement();
-                        String sql = "SELECT * FROM avaibility";
-                        rs = stmt.executeQuery(sql);
-
-                        while (rs.next()) {
-                            String nomorKamar = rs.getString("nomorKamar");
-                            String tipeKamar = rs.getString("tipeKamar");
-                            String tipeBed = rs.getString("tipeBed");
-                            int harga = rs.getInt("harga");
-                            String status = rs.getString("status");
+                    // Ambil data dari servlet melalui atribut request
+                    List<model.kamar> kamarList = (List<model.kamar>) request.getAttribute("kamarList");
+                    if (kamarList != null && !kamarList.isEmpty()) {
+                        for (model.kamar kamar : kamarList) {
                 %>
                 <tr>
-                    <td><%= nomorKamar %></td>
-                    <td><%= tipeKamar %></td>
-                    <td><%= tipeBed %></td>
-                    <td>Rp. <%= String.format("%,d", harga) %></td>
-                    <td><%= status %></td>
+                    <td><%= kamar.getNomorKamar() %></td>
+                    <td><%= kamar.getTipeKamar() %></td>
+                    <td><%= kamar.getTipeBed() %></td>
+                    <td>Rp. <%= String.format("%,.2f", kamar.getHarga()) %></td>
+                    <td><%= kamar.getStatus() %></td>
                     <td>
-                        <a href="editKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-edit">Edit</a>
-                        <a href="deleteKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-delete">Delete</a>
+                        <a href="editKamar.jsp?nomorKamar=<%= kamar.getNomorKamar() %>" class="btn btn-edit">Edit</a>
+                        <a href="deleteKamar.jsp?nomorKamar=<%= kamar.getNomorKamar() %>" class="btn btn-delete">Delete</a>
                     </td>
                 </tr>
                 <%
                         }
-                    } catch (ClassNotFoundException e) {
-                        out.println("<tr><td colspan='6'>Error: Driver tidak ditemukan!</td></tr>");
-                    } catch (SQLException e) {
-                        out.println("<tr><td colspan='6'>Error: Tidak dapat terhubung ke database!</td></tr>");
-                    } finally {
-                        try {
-                            if (rs != null) rs.close();
-                            if (stmt != null) stmt.close();
-                            if (conn != null) conn.close();
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
+                    } else {
+                %>
+                <tr>
+                    <td colspan="6" style="text-align:center;">Data kamar tidak tersedia.</td>
+                </tr>
+                <%
                     }
                 %>
             </tbody>
@@ -186,6 +160,5 @@
 
         <!-- Tambah Kamar Baru -->
         <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>
-
     </body>
 </html>
