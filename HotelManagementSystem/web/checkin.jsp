@@ -4,6 +4,10 @@
     Author     : anggafrydayana
 --%>
 
+
+<%@page import="java.sql.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -86,6 +90,19 @@
     </style>
 </head>
 <body>
+
+    <%
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test"); // ganti dengan database yang digunakan
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    %>
+
     <div class="form-container">
         <div class="banner">
             <h1>Manajemen Reservasi Hotel</h1>
@@ -96,14 +113,17 @@
                 <label for="name">Nama:</label>
                 <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
             </div>
+
             <div class="form-group">
                 <label for="phone">Nomor Telepon:</label>
                 <input type="text" id="phone" name="phone" placeholder="Masukkan nomor telepon" required>
             </div>
+            
             <div class="form-group">
                 <label for="nationality">Kewarganegaraan:</label>
                 <input type="text" id="nationality" name="nationality" placeholder="Masukkan kewarganegaraan" required>
             </div>
+            
             <div class="form-group">
                 <label for="gender">Gender:</label>
                 <select id="gender" name="gender">
@@ -111,59 +131,153 @@
                     <option value="Perempuan">Perempuan</option>
                 </select>
             </div>
+            
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Masukkan email" required>
             </div>
+            
             <div class="form-group">
                 <label for="id">ID/KTP:</label>
                 <input type="text" id="id" name="id" placeholder="Masukkan nomor ID/KTP" required>
             </div>
+            
             <div class="form-group">
                 <label for="address">Alamat:</label>
                 <input type="text" id="address" name="address" placeholder="Masukkan alamat lengkap" required>
             </div>
+            
             <div class="form-group">
-                <label for="checkinDate">Tanggal Check-IN (Hari ini):</label>
-                <input type="date" id="checkinDate" name="checkinDate" 
-                       value="<%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %>
+                <label for="checkIN_Date">Tanggal Check-IN (Hari ini):</label>
+                <input type="date" id="checkIN_Date" name="checkIN_Date" 
+                       value="<%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %>" required>
             </div>
+
             <div class="form-group">
-                <label for="bed">Bed:</label>
-                <select id="bed" name="bed">
-                    <option value="Single">Single</option>
-                    <option value="Double">Double</option>
-                    <option value="Queen Size">Queen Size</option>
-                    <option value="King Size">King Size</option>
-                </select>
-            </div>
+            <label for="bed">Bed:</label>
+            <select id="bed" name="bed">
+                <%
+                    try {
+                        stmt = conn.createStatement();
+                        String sql = "SELECT DISTINCT tipeBed FROM status";
+                        rs = stmt.executeQuery(sql);
+
+                        while (rs.next()) {
+                            String tipeBed = rs.getString("tipeBed");
+                %>
+                <option value="<%= tipeBed %>"><%= tipeBed %></option>
+                <%
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
+            </select>
+        </div>
+
             <div class="form-group">
-                <label for="roomType">Tipe Kamar:</label>
-                <select id="roomType" name="roomType">
-                    <option value="Non-AC">Non-AC</option>
-                    <option value="AC">AC</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="roomNumber">Nomor Kamar:</label>
-                <select id="roomNumber" name="roomNumber">
-                    <option value="001">001</option>
-                    <option value="002">002</option>
-                    <option value="003">003</option>
-                    <option value="004">004</option>
-                </select>
-            </div>
+            <label for="roomType">Tipe Kamar:</label>
+            <select id="roomType" name="roomType">
+                <%
+                    try {
+                        String sql = "SELECT DISTINCT tipeKamar FROM status";
+                        rs = stmt.executeQuery(sql);
+
+                        while (rs.next()) {
+                            String tipeKamar = rs.getString("tipeKamar");
+                %>
+                <option value="<%= tipeKamar %>"><%= tipeKamar %></option>
+                <%
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
+            </select>
+        </div>
+
+        <div class="form-group">
+        <label for="roomNumber">Nomor Kamar:</label>
+        <select id="roomNumber" name="roomNumber">
+            <%
+                try {
+                    String sql = "SELECT DISTINCT nomorKamar FROM status ";  // Hanya kamar yang tersedia
+                    rs = stmt.executeQuery(sql);
+
+                    while (rs.next()) {
+                        int nomorKamar = rs.getInt("nomorKamar");
+            %>
+            <option value="<%= nomorKamar %>"><%= nomorKamar %></option>
+            <%
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            %>
+        </select>
+    </div>
+
+            
             <div class="form-group">
                 <label for="price">Harga:</label>
-                <input type="text" id="price" name="price" placeholder="Masukkan harga kamar" required>
+                <select id="price" name="price">
+                    <%
+                        try {
+                            String sql = "SELECT harga FROM status";
+                            rs = stmt.executeQuery(sql);
+
+                            while (rs.next()) {
+                                float harga = rs.getFloat("harga");
+                    %>
+                    <option value="<%= harga %>">Rp. <%= String.format("%,d", harga) %></option>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                </select>
             </div>
+                
+                <%
+                    if (rs != null) rs.close();
+                    if (stmt != null) stmt.close();
+                    if (conn != null) conn.close();
+                %>
+
+
             <div class="button-group">
                 <button type="submit" class="btn-confirm">Konfirmasi</button>
                 <button type="reset" class="btn-reset">Bersihkan</button>
                 <button type="button" class="btn-back" onclick="window.history.back();">Kembali</button>
             </div>
-        </form>
+        </form>  
     </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#roomType').change(function() {
+                    var tipeKamar = $(this).val(); // Ambil nilai tipe kamar yang dipilih
+                    if (tipeKamar != '') {
+                        $.ajax({
+                            url: 'RoomDetailsServlet', // Mengarahkan ke servlet
+                            type: 'post',
+                            data: { tipeKamar: tipeKamar },
+                            success: function(response) {
+                                var roomDetails = JSON.parse(response);
+                                // Mengisi dropdown bed
+                                $('#bed').html(roomDetails.bedOptions);
+                                // Mengisi dropdown nomor kamar
+                                $('#roomNumber').html(roomDetails.roomOptions);
+                                // Menampilkan harga
+                                $('#price').html(roomDetails.priceOptions);
+                            }
+                        });
+                    }
+                });
+            });
+        </script>
+
 </body>
 </html>
 
