@@ -201,7 +201,7 @@
         <select id="roomNumber" name="roomNumber">
             <%
                 try {
-                    String sql = "SELECT DISTINCT nomorKamar FROM status ";  // Hanya kamar yang tersedia
+                    String sql = "SELECT DISTINCT nomorKamar FROM status";  // Hanya kamar yang tersedia
                     rs = stmt.executeQuery(sql);
 
                     while (rs.next()) {
@@ -227,7 +227,7 @@
                             rs = stmt.executeQuery(sql);
 
                             while (rs.next()) {
-                                float harga = rs.getFloat("harga");
+                                int harga = rs.getInt("harga");
                     %>
                     <option value="<%= harga %>">Rp. <%= String.format("%,d", harga) %></option>
                     <%
