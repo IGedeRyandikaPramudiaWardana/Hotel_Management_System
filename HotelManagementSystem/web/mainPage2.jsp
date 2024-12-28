@@ -1,7 +1,7 @@
 <%-- 
     Document   : mainPage
     Created on : Dec 25, 2024, 7:27:22 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

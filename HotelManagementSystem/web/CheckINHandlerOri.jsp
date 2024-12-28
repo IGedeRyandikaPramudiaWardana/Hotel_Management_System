@@ -7,6 +7,9 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Date" %>
+<%@ page import="java.text.ParseException" %>
+
+
 <%
     String nama = request.getParameter("nama");
     String nomorTelepon = request.getParameter("nomorTelepon");
@@ -18,12 +21,19 @@
     String checkIN_Date = request.getParameter("check-in_Date");
     String bed = request.getParameter("bed");
     String tipeKamar = request.getParameter("tipeKamar");
-    int nomorKamar = Integer.parseInt(request.getParameter("nomorKamar"));
+    String nomorKamar = request.getParameter("nomorKamar");
     int harga = Integer.parseInt(request.getParameter("harga"));
 
     // Hitung jumlah malam
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    Date checkin = sdf.parse(checkIN_Date);
+    Date checkin = null;
+    try {
+        checkin = sdf.parse(checkIN_Date);
+    } catch (ParseException e) {
+        e.printStackTrace();
+        out.println("<h1>Format tanggal tidak valid!</h1>");
+        return; // Hentikan eksekusi jika terjadi kesalahan
+    }
     
     /*
     long diffInMillies = Math.abs(checkout.getTime() - checkin.getTime());
@@ -40,10 +50,12 @@
     try {
         // Koneksi ke database
         Class.forName("com.mysql.cj.jdbc.Driver");
-        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/check");
+        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test");
 
         // Simpan data check-in
-        String insertSql = "INSERT INTO check-in (nama, nomorTelepon, kewarganegaraan, gender, email, id/Ktp, alamat, check-in_Date, bed, tipeKamar, nomorKamar, harga) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String insertSql = "INSERT INTO `check-in` (`nama`, `nomorTelepon`, `kewarganegaraan`, `gender`, `email`, `id/Ktp`, `alamat`, `check-in_Date`, `bed`, `tipeKamar`, `nomorKamar`, `harga`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        System.out.println("Query: " + insertSql); // Cek query
+        
         ps = conn.prepareStatement(insertSql);
         ps.setString(1, nama);
         ps.setString(2, nomorTelepon);
@@ -55,14 +67,14 @@
         ps.setDate(8, sqlCheckIN_Date);
         ps.setString(9, bed);
         ps.setString(10, tipeKamar);
-        ps.setInt(11, nomorKamar);
+        ps.setString(11, nomorKamar);
         ps.setInt(12, harga);
         ps.executeUpdate();
 
         // Ubah status kamar menjadi "Check-in"
         String updateStatusSql = "UPDATE status SET status = 'check-in' WHERE nomorKamar = ?";
         ps = conn.prepareStatement(updateStatusSql);
-        ps.setInt(1, nomorKamar);
+        ps.setString(1, nomorKamar);
         ps.executeUpdate();
 
         // Tampilkan konfirmasi ke halaman

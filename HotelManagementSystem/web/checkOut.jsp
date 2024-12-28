@@ -1,7 +1,7 @@
 <%-- 
     Document   : checkInjsp
     Created on : Dec 27, 2024, 2:40:19 PM
-    Author     : LENOVO
+    Author     : Bramandita
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,10 +11,11 @@
     <title>Customer Check-OUT</title>
     <style>
         body {
-            font-family: "Arial", sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #3498db;
         }
         .form-container {
             width: 800px;

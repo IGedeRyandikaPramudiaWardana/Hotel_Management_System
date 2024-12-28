@@ -1,7 +1,7 @@
 <%-- 
     Document   : detailPembayaran
     Created on : Dec 27, 2024, 6:06:23 PM
-    Author     : LENOVO
+    Author     : Bramandita
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,13 +15,10 @@
         /* Body Style */
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f4;
+            color: #3498db;
         }
 
         .container {

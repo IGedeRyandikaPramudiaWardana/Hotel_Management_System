@@ -1,7 +1,7 @@
 <%-- 
     Document   : mainPage
     Created on : Dec 25, 2024, 7:27:22 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -155,7 +155,7 @@
                 <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
                 <a href="login.jsp">Logout</a>
-                <a href="#">Admin</a>
+                <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
             </div>
         </div>
         

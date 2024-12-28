@@ -14,10 +14,11 @@
     <title>Customer Check-IN</title>
     <style>
         body {
-            font-family: "Arial", sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #3498db;
         }
         .form-container {
             width: 800px;
@@ -108,20 +109,20 @@
             <h1>Manajemen Reservasi Hotel</h1>
         </div>
         <h1>Customer Check-IN</h1>
-        <form action="CheckINHandler.jsp" method="post">
+        <form action="CheckINHandler2" method="get">
             <div class="form-group">
-                <label for="name">Nama:</label>
-                <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap" required>
+                <label for="nama">Nama:</label>
+                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
             </div>
 
             <div class="form-group">
-                <label for="phone">Nomor Telepon:</label>
-                <input type="text" id="phone" name="phone" placeholder="Masukkan nomor telepon" required>
+                <label for="nomorTelepon">Nomor Telepon:</label>
+                <input type="text" id="nomorTelepon" name="nomorTelepon" placeholder="Masukkan nomor telepon" required>
             </div>
             
             <div class="form-group">
-                <label for="nationality">Kewarganegaraan:</label>
-                <input type="text" id="nationality" name="nationality" placeholder="Masukkan kewarganegaraan" required>
+                <label for="kewarganegaraan">Kewarganegaraan:</label>
+                <input type="text" id="kewarganegaraan" name="kewarganegaraan" placeholder="Masukkan kewarganegaraan" required>
             </div>
             
             <div class="form-group">
@@ -138,18 +139,18 @@
             </div>
             
             <div class="form-group">
-                <label for="id">ID/KTP:</label>
-                <input type="text" id="id" name="id" placeholder="Masukkan nomor ID/KTP" required>
+                <label for="idKtp">ID/KTP:</label>
+                <input type="text" id="idKtp" name="idKtp" placeholder="Masukkan nomor ID/KTP" required>
             </div>
             
             <div class="form-group">
-                <label for="address">Alamat:</label>
-                <input type="text" id="address" name="address" placeholder="Masukkan alamat lengkap" required>
+                <label for="alamat">Alamat:</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap" required>
             </div>
             
             <div class="form-group">
-                <label for="checkIN_Date">Tanggal Check-IN (Hari ini):</label>
-                <input type="date" id="checkIN_Date" name="checkIN_Date" 
+                <label for="check-in_Date">Tanggal Check-IN (Hari ini):</label>
+                <input type="date" id="check-in_Date" name="check-in_Date" 
                        value="<%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %>" required>
             </div>
 
@@ -176,8 +177,8 @@
         </div>
 
             <div class="form-group">
-            <label for="roomType">Tipe Kamar:</label>
-            <select id="roomType" name="roomType">
+            <label for="tipeKamar">Tipe Kamar:</label>
+            <select id="tipeKamar" name="tipeKamar">
                 <%
                     try {
                         String sql = "SELECT DISTINCT tipeKamar FROM status";
@@ -197,11 +198,11 @@
         </div>
 
         <div class="form-group">
-        <label for="roomNumber">Nomor Kamar:</label>
-        <select id="roomNumber" name="roomNumber">
+        <label for="nomorKamar">Nomor Kamar:</label>
+        <select id="nomorKamar" name="nomorKamar">
             <%
                 try {
-                    String sql = "SELECT DISTINCT nomorKamar FROM status";  // Hanya kamar yang tersedia
+                    String sql = "SELECT nomorKamar FROM status";  // Hanya kamar yang tersedia
                     rs = stmt.executeQuery(sql);
 
                     while (rs.next()) {
@@ -219,8 +220,8 @@
 
             
             <div class="form-group">
-                <label for="price">Harga:</label>
-                <select id="price" name="price">
+                <label for="harga">Harga:</label>
+                <select id="harga" name="harga">
                     <%
                         try {
                             String sql = "SELECT harga FROM status";
@@ -247,7 +248,7 @@
 
 
             <div class="button-group">
-                <button type="submit" class="btn-confirm">Konfirmasi</button>
+                <button type="submit" class="btn-confirm" value="CheckINHandler">Konfirmasi</button>
                 <button type="reset" class="btn-reset">Bersihkan</button>
                 <button type="button" class="btn-back" onclick="window.history.back();">Kembali</button>
             </div>
@@ -256,7 +257,7 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $('#roomType').change(function() {
+                $('#tipeKamar').change(function() {
                     var tipeKamar = $(this).val(); // Ambil nilai tipe kamar yang dipilih
                     if (tipeKamar != '') {
                         $.ajax({
@@ -268,9 +269,9 @@
                                 // Mengisi dropdown bed
                                 $('#bed').html(roomDetails.bedOptions);
                                 // Mengisi dropdown nomor kamar
-                                $('#roomNumber').html(roomDetails.roomOptions);
+                                $('#nomorKamar').html(roomDetails.roomOptions);
                                 // Menampilkan harga
-                                $('#price').html(roomDetails.priceOptions);
+                                $('#harga').html(roomDetails.priceOptions);
                             }
                         });
                     }

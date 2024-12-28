@@ -1,7 +1,7 @@
 <%-- 
     Document   : process
     Created on : Dec 25, 2024, 7:13:41 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 <%@page import="java.sql.*"%>
 <%@include file="WEB-INF/connector.jsp" %>
