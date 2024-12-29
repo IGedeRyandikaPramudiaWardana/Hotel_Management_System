@@ -6,77 +6,68 @@ package prosesCheckIN;
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import static java.lang.System.out;
-import java.util.Date;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 @WebServlet("/prosesCheckIN/CheckINHandler2") // Mapping URL untuk servlet
 public class CheckINHandler2 extends HttpServlet {
+    
+    private static final long serialVersionUID = 1L;
+
+    // Konfigurasi database
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/check";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String nama = request.getParameter("nama");
-        String nomorTelepon = request.getParameter("nomorTelepon");
-        String kewarganegaraan = request.getParameter("kewarganegaraan");
-        String gender = request.getParameter("gender");
-        String email = request.getParameter("email");
-        String idKtp = request.getParameter("id/Ktp");
-        String alamat = request.getParameter("alamat");
-        String checkIN_Date = request.getParameter("check-in_Date");
-        String bed = request.getParameter("bed");
-        String tipeKamar = request.getParameter("tipeKamar");
-        String nomorKamar = request.getParameter("nomorKamar");
-        int harga = Integer.parseInt(request.getParameter("harga"));
-
-        // Hitung jumlah malam
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date checkin = null;
-        try {
-            checkin = (Date) sdf.parse(checkIN_Date);
-        } catch (ParseException e) {
-            e.printStackTrace();
-            out.println("<h1>Format tanggal tidak valid!</h1>");
-            return; // Hentikan eksekusi jika terjadi kesalahan
-        }
-
-        /*
-        long diffInMillies = Math.abs(checkout.getTime() - checkin.getTime());
-        long diffDays = diffInMillies / (1000 * 60 * 60 * 24);
-        */
-
-        // Total harga
-        //float totalPrice = (float) (diffDays * price);
-
-        Connection conn = null;
-        PreparedStatement ps = null;
-        //java.sql.Date sqlCheckIN_Date = new java.sql.Date(checkin.getTime());
-        java.sql.Date sqlCheckIN_Date = java.sql.Date.valueOf(checkIN_Date);
+response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
 
         try {
+            // Ambil data dari form
+            String nama = request.getParameter("nama");
+            String nomorTelepon = request.getParameter("nomorTelepon");
+            String kewarganegaraan = request.getParameter("kewarganegaraan");
+            String gender = request.getParameter("gender");
+            String email = request.getParameter("email");
+            String idKtp = request.getParameter("idKtp");
+            String alamat = request.getParameter("alamat");
+            String checkIN_Date = request.getParameter("checkIN_Date");
+            String bed = request.getParameter("bed");
+            String tipeKamar = request.getParameter("tipeKamar");
+            String nomorKamar = request.getParameter("nomorKamar");
+            String hargaStr = request.getParameter("harga");
+
+            // Validasi input
+            if (nama == null || nama.isEmpty() || nomorTelepon == null || nomorTelepon.isEmpty()) {
+                out.println("<h1>Error: Nama dan nomor telepon wajib diisi.</h1>");
+                return;
+            }
+
+            int harga = Integer.parseInt(hargaStr); // Konversi harga ke integer
+
             // Koneksi ke database
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/check");
+            Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
-            // Simpan data check-in
-            String insertSql = "INSERT INTO `check-in` (`nama`, `nomorTelepon`, `kewarganegaraan`, `gender`, `email`, `id/Ktp`, `alamat`, `check-in_Date`, `bed`, `tipeKamar`, `nomorKamar`, `harga`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            System.out.println("Query: " + insertSql); // Cek query
+            // Query SQL untuk menyimpan data
+            String sql = "INSERT INTO `check-in` (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement ps = con.prepareStatement(sql);
 
-            ps = conn.prepareStatement(insertSql);
+            // Set parameter query
             ps.setString(1, nama);
             ps.setString(2, nomorTelepon);
             ps.setString(3, kewarganegaraan);
@@ -84,47 +75,34 @@ public class CheckINHandler2 extends HttpServlet {
             ps.setString(5, email);
             ps.setString(6, idKtp);
             ps.setString(7, alamat);
-            ps.setDate(8, sqlCheckIN_Date);
+            ps.setString(8, checkIN_Date);
             ps.setString(9, bed);
             ps.setString(10, tipeKamar);
             ps.setString(11, nomorKamar);
             ps.setInt(12, harga);
-            ps.executeUpdate();
 
-            // Ubah status kamar menjadi "Check-in"
-            String updateStatusSql = "UPDATE status SET status = 'check-in' WHERE nomorKamar = ?";
-            ps = conn.prepareStatement(updateStatusSql);
-            ps.setString(1, nomorKamar);
-            ps.executeUpdate();
+            // Eksekusi query
+            int result = ps.executeUpdate();
 
-            // Tampilkan konfirmasi ke halaman
-            out.println("<h1>Check-in Berhasil!</h1>");
-            out.println("<p>Nama: " + nama + "</p>");
-            out.println("<p>Nomor Telepon: " + nomorTelepon + "</p>");
-            out.println("<p>Kewarganegaraan: " + kewarganegaraan + "</p>");
-            out.println("<p>Gender: " + gender + "</p>");
-            out.println("<p>E-mail: " + email + "</p>");
-            out.println("<p>ID/KTP: " + idKtp + "</p>");
-            out.println("<p>Alamat: " + alamat + "</p>");
-            out.println("<p>Tanggal Check-in: " + checkIN_Date + "</p>");
-            out.println("<p>Bed: " + bed + "</p>");
-            out.println("<p>Tipe Kamar: " + tipeKamar + "</p>");
-            out.println("<p>Nomor Kamar: " + nomorKamar + "</p>");
-            out.println("<p>Total Harga: Rp. " + harga + "</p>");
-        } catch (Exception e) {
-            e.printStackTrace();
-            out.println("<h1>Terjadi kesalahan!</h1>");
-        } finally {
-            try {
-                if (ps != null) try {
-                    ps.close();
-                } catch (SQLException ex) {
-                    Logger.getLogger(CheckINHandler2.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
+            // Respon ke pengguna
+            if (result > 0) {
+                out.println("<h1>Check-in berhasil!</h1>");
+                out.println("<a href='/HotelManagementSystem'>Kembali ke halaman utama</a>");
+            } else {
+                out.println("<h1>Gagal menyimpan data.</h1>");
             }
+
+            // Tutup koneksi
+            ps.close();
+            con.close();
+        } catch (NumberFormatException e) {
+            out.println("<h1>Error: Harga harus berupa angka.</h1>");
+        } catch (SQLException e) {
+            out.println("<h1>Error pada database: " + e.getMessage() + "</h1>");
+        } catch (ClassNotFoundException e) {
+            out.println("<h1>Error: Driver database tidak ditemukan.</h1>");
+        } catch (Exception e) {
+            out.println("<h1>Error tidak terduga: " + e.getMessage() + "</h1>");
         }
     }
 }

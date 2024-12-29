@@ -9,7 +9,7 @@
 <%@page import="java.sql.SQLException"%>
 
 <%
-    String dbURL = "jdbc:mysql://localhost:3306/test";
+    String dbURL = "jdbc:mysql://localhost:3306/test3";
     String dbUser = "root"; // Ganti dengan username MySQL Anda
     String dbPassword = ""; // Ganti dengan password MySQL Anda
 

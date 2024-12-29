@@ -138,7 +138,7 @@
                         Class.forName("com.mysql.cj.jdbc.Driver");
 
                         // Ubah username dan password sesuai dengan database Anda
-                        String url = "jdbc:mysql://localhost:3306/test";
+                        String url = "jdbc:mysql://localhost:3306/test3";
                         String user = "root"; // username MySQL Anda
                         String password = ""; // password MySQL Anda (kosong jika default)
 

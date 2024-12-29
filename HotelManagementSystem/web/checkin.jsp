@@ -98,7 +98,7 @@
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test"); // ganti dengan database yang digunakan
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test3"); // ganti dengan database yang digunakan
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -109,7 +109,7 @@
             <h1>Manajemen Reservasi Hotel</h1>
         </div>
         <h1>Customer Check-IN</h1>
-        <form action="CheckINHandler2" method="get">
+        <form action="prosesCheckIN/CheckINHandler2" method="get">
             <div class="form-group">
                 <label for="nama">Nama:</label>
                 <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
@@ -149,8 +149,8 @@
             </div>
             
             <div class="form-group">
-                <label for="check-in_Date">Tanggal Check-IN (Hari ini):</label>
-                <input type="date" id="check-in_Date" name="check-in_Date" 
+                <label for="checkIN_Date">Tanggal Check-IN (Hari ini):</label>
+                <input type="date" id="checkIN_Date" name="checkIN_Date" 
                        value="<%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %>" required>
             </div>
 
@@ -160,7 +160,7 @@
                 <%
                     try {
                         stmt = conn.createStatement();
-                        String sql = "SELECT DISTINCT tipeBed FROM status";
+                        String sql = "SELECT DISTINCT tipeBed FROM avaibility";
                         rs = stmt.executeQuery(sql);
 
                         while (rs.next()) {
@@ -181,7 +181,7 @@
             <select id="tipeKamar" name="tipeKamar">
                 <%
                     try {
-                        String sql = "SELECT DISTINCT tipeKamar FROM status";
+                        String sql = "SELECT DISTINCT tipeKamar FROM avaibility";
                         rs = stmt.executeQuery(sql);
 
                         while (rs.next()) {
@@ -202,7 +202,7 @@
         <select id="nomorKamar" name="nomorKamar">
             <%
                 try {
-                    String sql = "SELECT nomorKamar FROM status";  // Hanya kamar yang tersedia
+                    String sql = "SELECT nomorKamar FROM avaibility";  // Hanya kamar yang tersedia
                     rs = stmt.executeQuery(sql);
 
                     while (rs.next()) {
@@ -224,7 +224,7 @@
                 <select id="harga" name="harga">
                     <%
                         try {
-                            String sql = "SELECT harga FROM status";
+                            String sql = "SELECT harga FROM avaibility";
                             rs = stmt.executeQuery(sql);
 
                             while (rs.next()) {
@@ -248,8 +248,8 @@
 
 
             <div class="button-group">
-                <button type="submit" class="btn-confirm" value="CheckINHandler">Konfirmasi</button>
-                <button type="reset" class="btn-reset">Bersihkan</button>
+                <button type="submit" class="btn-confirm" value="CheckINHandler2">Konfirmasi</button>
+                <button type="reset" class="btn-reset" onclick="window.history.clear()">Bersihkan</button>
                 <button type="button" class="btn-back" onclick="window.history.back();">Kembali</button>
             </div>
         </form>  

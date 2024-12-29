@@ -3,13 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/process.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/connector.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/checkOut.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/login.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/checkin.jsp</file>
-            <file>file:/D:/Praktikum%20OOP/WebApps/Hotel_Management_System/HotelManagementSystem/web/detailPembayaran.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/connector.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/adminPage.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/prosesCheckIN/CheckINHandler2.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/process.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/CheckINHandlerOri2.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkin.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/mainPage.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/CheckINHandlerOri.jsp</file>
         </group>
     </open-files>
 </project-private>
