@@ -1,7 +1,7 @@
 <%-- 
     Document   : connector
     Created on : Dec 25, 2024, 7:30:19 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@page import="java.sql.Connection"%>

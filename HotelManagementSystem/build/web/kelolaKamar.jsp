@@ -1,7 +1,7 @@
 <%-- 
     Document   : kelolaKamar
     Created on : Dec 26, 2024, 10:56:34 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -134,14 +134,21 @@
                     ResultSet rs = null;
 
                     try {
+                        // Load driver
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test");
+
+                        // Ubah username dan password sesuai dengan database Anda
+                        String url = "jdbc:mysql://localhost:3306/test";
+                        String user = "root"; // username MySQL Anda
+                        String password = ""; // password MySQL Anda (kosong jika default)
+
+                        conn = DriverManager.getConnection(url, user, password);
                         stmt = conn.createStatement();
-                        String sql = "SELECT * FROM status";
+                        String sql = "SELECT * FROM avaibility";
                         rs = stmt.executeQuery(sql);
 
                         while (rs.next()) {
-                            int nomorKamar = rs.getInt("nomorKamar");
+                            String nomorKamar = rs.getString("nomorKamar");
                             String tipeKamar = rs.getString("tipeKamar");
                             String tipeBed = rs.getString("tipeBed");
                             int harga = rs.getInt("harga");
@@ -160,8 +167,10 @@
                 </tr>
                 <%
                         }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        out.println("<tr><td colspan='6'>Error: Driver tidak ditemukan!</td></tr>");
+                    } catch (SQLException e) {
+                        out.println("<tr><td colspan='6'>Error: Tidak dapat terhubung ke database!</td></tr>");
                     } finally {
                         try {
                             if (rs != null) rs.close();

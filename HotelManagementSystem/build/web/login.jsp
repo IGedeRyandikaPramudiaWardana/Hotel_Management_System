@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : Dec 25, 2024, 6:48:02 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

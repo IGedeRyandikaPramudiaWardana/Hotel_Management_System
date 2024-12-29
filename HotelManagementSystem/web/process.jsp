@@ -24,7 +24,7 @@
         
         
         if (conn != null) {
-            String query = "SELECT * FROM admin WHERE Nama = ? AND Password = ?";
+            String query = "SELECT * FROM admin WHERE nama = ? AND password = ?";
             try (PreparedStatement stmt = conn.prepareStatement(query)) {
                 stmt.setString(1, username);
                 stmt.setString(2, password);
