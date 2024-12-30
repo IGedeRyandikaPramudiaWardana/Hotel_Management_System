@@ -1,7 +1,7 @@
 <%-- 
     Document   : CheckINHandlerOri2
     Created on : Dec 28, 2024, 7:36:35 PM
-    Author     : ASUS
+    Author     : Ryandika
 --%>
 
 <%@ page import="java.sql.*" %>

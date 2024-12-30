@@ -1,24 +1,25 @@
 <%-- 
-    Document   : kelolaKamar
-    Created on : Dec 26, 2024, 10:56:34 PM
+    Document   : kelolaCheckIN
+    Created on : Dec 29, 2024, 9:24:09 PM
     Author     : Ryandika
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kelola Kamar</title>
+        <title>Kelola Check-in</title>
         <style>
             body {
                 font-family: 'Roboto', sans-serif;
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 0;
-                color: #2c3e50;
+                color: #2c3e50;  
             }
 
             h1 {
@@ -26,19 +27,36 @@
                 margin-top: 30px;
                 color: #3498db;
             }
+            
+            .table-container{
+                width: 100%;
+                overflow-x: auto;
+                margin: 20px 0;
+            }
 
             table {
-                width: 80%;
-                margin: 20px auto;
+                width: 100%;
                 border-collapse: collapse;
                 background-color: #fff;
                 border-radius: 8px;
                 overflow: hidden;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                min-width: 1200px;
+            }
+            
+            table td .btn {
+                display: inline-block;
+                padding: 8px 12px;
+                margin: 2px; /* Memberikan jarak antar tombol */
+                text-align: center;
+                border-radius: 4px;
+                font-size: 14px;
+                cursor: pointer;
+                text-decoration: none;
             }
 
             table th, table td {
-                padding: 15px;
+                padding: 10px;
                 text-align: left;
                 border-bottom: 1px solid #ddd;
             }
@@ -51,6 +69,7 @@
 
             table td {
                 color: #333;
+                white-space: nowrap;
             }
 
             .btn {
@@ -71,59 +90,28 @@
                 background-color: #e74c3c;
                 color: white;
             }
-
-            .btn-add {
-                display: block;
-                width: 150px;
-                margin: 20px auto;
-                background-color: #3498db;
-                color: white;
-                text-align: center;
-                padding: 10px;
-                border-radius: 5px;
-                text-decoration: none;
-            }
-
-            .form-group {
-                margin-bottom: 15px;
-            }
-
-            .form-group label {
-                display: block;
-                margin-bottom: 5px;
-            }
-
-            .form-group input, .form-group select {
-                width: 100%;
-                padding: 10px;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-                font-size: 14px;
-            }
-
-            .container {
-                width: 60%;
-                margin: 20px auto;
-                background-color: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
         </style>
     </head>
     <body>
-        <h1>Kelola Kamar Hotel</h1>
+        <h1>Kelola Check-IN</h1>
 
         <!-- Tabel untuk menampilkan kamar -->
         <table>
             <thead>
                 <tr>
-                    <th>Nomor Kamar</th>
+                    <th>Nama</th>
+                    <th>Nomor Telepon</th>
+                    <th>Kewarganegaraan</th>
+                    <th>Gender</th>
+                    <th>E-mail</th>
+                    <th>ID/KTP</th>
+                    <th>Alamat</th>
+                    <th>Check-IN Date</th>
+                    <th>Bed</th>
                     <th>Tipe Kamar</th>
-                    <th>Tipe Bed</th>
-                    <th>Harga (Rupiah)</th>
-                    <th>Status</th>
-                    <th>Aksi</th>
+                    <th>Nomor Kamar</th>
+                    <th>Harga</th>
+                    
                 </tr>
             </thead>
             <tbody>
@@ -138,32 +126,44 @@
                         Class.forName("com.mysql.cj.jdbc.Driver");
 
                         // Ubah username dan password sesuai dengan database Anda
-                        String url = "jdbc:mysql://localhost:3306/test3";
+                        String url = "jdbc:mysql://localhost:3306/check";
                         String user = "root"; // username MySQL Anda
                         String password = ""; // password MySQL Anda (kosong jika default)
 
                         conn = DriverManager.getConnection(url, user, password);
                         stmt = conn.createStatement();
-                        String sql = "SELECT * FROM avaibility";
+                        String sql = "SELECT * FROM `check-in`";
                         rs = stmt.executeQuery(sql);
 
                         while (rs.next()) {
-                            String nomorKamar = rs.getString("nomorKamar");
+                            String nama = rs.getString("nama");
+                            String nomorTelepon = rs.getString("nomorTelepon");
+                            String kewarganegaraan = rs.getString("kewarganegaraan");
+                            String gender = rs.getString("gender");
+                            String email = rs.getString("email");
+                            String idKtp = rs.getString("idKtp");
+                            String alamat = rs.getString("alamat");
+                            String checkIN_Date = rs.getString("checkIN_Date");
+                            String bed = rs.getString("bed");
                             String tipeKamar = rs.getString("tipeKamar");
-                            String tipeBed = rs.getString("tipeBed");
+                            String nomorKamar = rs.getString("nomorKamar");
                             int harga = rs.getInt("harga");
-                            String status = rs.getString("status");
+                            
                 %>
                 <tr>
-                    <td><%= nomorKamar %></td>
+                    <td><%= nama %></td>
+                    <td><%= nomorTelepon %></td>
+                    <td><%= kewarganegaraan %></td>
+                    <td><%= gender %></td>
+                    <td><%= email %></td>
+                    <td><%= idKtp %></td>
+                    <td><%= alamat %></td>
+                    <td><%= checkIN_Date %></td>
+                    <td><%= bed %></td>
                     <td><%= tipeKamar %></td>
-                    <td><%= tipeBed %></td>
+                    <td><%= nomorKamar %></td>
                     <td>Rp. <%= String.format("%,d", harga) %></td>
-                    <td><%= status %></td>
-                    <td>
-                        <a href="editKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-edit">Edit</a>
-                        <a href="deleteKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-delete">Delete</a>
-                    </td>
+
                 </tr>
                 <%
                         }
@@ -185,7 +185,7 @@
         </table>
 
         <!-- Tambah Kamar Baru -->
-        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>
+
 
     </body>
 </html>
