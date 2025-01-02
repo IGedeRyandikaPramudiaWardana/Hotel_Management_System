@@ -87,7 +87,7 @@ response.setContentType("text/html;charset=UTF-8");
             // Respon ke pengguna
             if (result > 0) {
                 out.println("<h1>Check-in berhasil!</h1>");
-                out.println("<a href='/HotelManagementSystem'>Kembali ke halaman utama</a>");
+                out.println("<meta http-equiv='refresh' content='3;url=/HotelManagementSystem'>");
             } else {
                 out.println("<h1>Gagal menyimpan data.</h1>");
             }

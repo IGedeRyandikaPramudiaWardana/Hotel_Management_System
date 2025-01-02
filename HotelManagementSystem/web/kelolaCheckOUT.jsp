@@ -1,6 +1,6 @@
 <%-- 
-    Document   : kelolaCheckIN2
-    Created on : Dec 30, 2024, 7:50:09 PM
+    Document   : kelolaCheckOUT
+    Created on : Jan 2, 2025, 12:30:29 PM
     Author     : Ryandika
 --%>
 
@@ -19,7 +19,7 @@
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 0;
-                color: #2c3e50;  
+                color: #2c3e50;
             }
 
             h1 {
@@ -111,7 +111,7 @@
                     <th>Tipe Kamar</th>
                     <th>Nomor Kamar</th>
                     <th>Harga</th>
-                    
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -163,7 +163,10 @@
                     <td><%= tipeKamar %></td>
                     <td><%= nomorKamar %></td>
                     <td>Rp. <%= String.format("%,d", harga) %></td>
-
+                    <td>
+                        <a href="editKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-edit">Edit</a>
+                        <a href="deleteKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-delete">Delete</a>
+                    </td>
                 </tr>
                 <%
                         }

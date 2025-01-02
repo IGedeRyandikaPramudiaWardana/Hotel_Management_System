@@ -1,9 +1,12 @@
 <%-- 
-    Document   : checkInjsp
+    Document   : checkOut
     Created on : Dec 27, 2024, 2:40:19 PM
     Author     : Bramandita
 --%>
 
+<%@page import="java.sql.*"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -88,6 +91,22 @@
     </style>
 </head>
 <body>
+    
+    
+    <%
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/check"); // ganti dengan database yang digunakan
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    %>
+    
+    
+    
     <div class="form-container">
         <!-- Banner -->
         <div class="banner">
@@ -99,28 +118,117 @@
         <!-- Form Check-OUT -->
         <form action="CheckOUTHandler.jsp" method="post">
             <div class="form-group">
+                <label for="idKtp">ID/KTP:</label>
+                    <select id="idKtp" name="idKtp">
+                <%
+                    try {
+                        stmt = conn.createStatement();
+                        String sql = "SELECT DISTINCT idKtp FROM `check-in`";
+                        rs = stmt.executeQuery(sql);
+
+                        while (rs.next()) {
+                            String idKtp = rs.getString("idKtp");
+                %>
+                <option value="<%= idKtp %>"><%= idKtp %></option>
+                <%
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
+                    </select>
+            </div>
+            <div class="form-group">
                 <label for="nama">Nama Pelanggan:</label>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan nama pelanggan" required>
+                    <select id="nama" name="nama">
+                    <%
+                        try {
+                            stmt = conn.createStatement();
+                            String sql = "SELECT DISTINCT nama FROM `check-in`";
+                            rs = stmt.executeQuery(sql);
+
+                            while (rs.next()) {
+                                String nama = rs.getString("nama");
+                    %>
+                    <option value="<%= nama %>"><%= nama %></option>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                    </select>
             </div>
             <div class="form-group">
-                <label for="checkinDate">Tanggal Check-IN:</label>
-                <input type="date" id="checkinDate" name="checkinDate" required>
+                <label for="checkIN_Date">Tanggal Check-IN:</label>
+                    <select id="checkIN_Date" name="checkIN_Date">
+                    <%
+                        try {
+                            stmt = conn.createStatement();
+                            String sql = "SELECT DISTINCT checkIN_Date FROM `check-in`";
+                            rs = stmt.executeQuery(sql);
+
+                            while (rs.next()) {
+                                String checkIN_Date = rs.getString("checkIN_Date");
+                    %>
+                    <option value="<%= checkIN_Date %>"><%= checkIN_Date %></option>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                    </select>
             </div>
             <div class="form-group">
-                <label for="checkoutDate">Tanggal Check-OUT:</label>
-                <input type="date" id="checkoutDate" name="checkoutDate" required>
+                <label for="checkOUT_Date">Tanggal Check-OUT:</label>
+                <input type="date" id="checkOUT_Date" name="checkOUT_Date" 
+                        value="<%= new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()) %>" required>
             </div>
             <div class="form-group">
-                <label for="telepon">Nomor Telepon:</label>
-                <input type="text" id="telepon" name="telepon" placeholder="Masukkan nomor telepon" required>
+                <label for="nomorTelepon">Nomor Telepon:</label>
+                    <select id="nomorTelepon" name="nomorTelepon">
+                    <%
+                        try {
+                            stmt = conn.createStatement();
+                            String sql = "SELECT DISTINCT nomorTelepon FROM `check-in`";
+                            rs = stmt.executeQuery(sql);
+
+                            while (rs.next()) {
+                                String nomorTelepon = rs.getString("nomorTelepon");
+                    %>
+                    <option value="<%= nomorTelepon %>"><%= nomorTelepon %></option>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                    </select>
             </div>
             <div class="form-group">
                 <label for="harga">Harga Per-Hari:</label>
-                <input type="text" id="harga" name="harga" placeholder="Masukkan harga per hari" required>
+                <select id="harga" name="harga">
+                    <%
+                        try {
+                            String sql = "SELECT harga FROM `check-in`";
+                            rs = stmt.executeQuery(sql);
+
+                            while (rs.next()) {
+                                int harga = rs.getInt("harga");
+                    %>
+                    <option value="<%= harga %>">Rp. <%= String.format("%,d", harga) %></option>
+                    <%
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                </select>
             </div>
             <div class="form-group">
                 <label for="jumlahHari">Jumlah Hari Menginap:</label>
-                <input type="number" id="jumlahHari" name="jumlahHari" placeholder="Masukkan jumlah hari" required>
+                <input type="number" id="jumlahHari" name="jumlahHari" placeholder="Masukkan jumlah hari" readonly>
             </div>
             <div class="form-group">
                 <label for="totalHarga">Total Harga:</label>
@@ -128,7 +236,23 @@
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Masukkan alamat email" required>
+                    <select id="email" name="email">
+                        <%
+                            try {
+                                String sql = "SELECT DISTINCT email FROM `check-in`";
+                                rs = stmt.executeQuery(sql);
+
+                                while (rs.next()) {
+                                    String email = rs.getString("email");
+                        %>
+                        <option value="<%= email %>"><%= email %></option>
+                        <%
+                                }
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
+                    </select>
             </div>
             <div class="button-group">
                 <button type="submit" class="btn-confirm">Konfirmasi</button>
@@ -137,5 +261,38 @@
             </div>
         </form>
     </div>
+
+                    
+        <script>
+            function calculateDays() {
+                const checkIN_Value = document.getElementById("checkIN_Date").value;
+                const checkOUT_Value = document.getElementById("checkOUT_Date").value;
+
+                if (checkIN_Value && checkOUT_Value) {
+                    const checkIN_Date = new Date(checkIN_Value); // Tanggal Check-IN
+                    const checkOUT_Date = new Date(checkOUT_Value); // Tanggal Check-OUT
+
+                    if (checkOUT_Date >= checkIN_Date) {
+                        const timeDiff = Math.abs(checkOUT_Date - checkIN_Date);
+                        const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); // Konversi ke hari
+                        document.getElementById("jumlahHari").value = daysDiff;
+
+                        // Ambil harga per hari
+                        const harga = parseInt(document.getElementById("harga").value) || 0;
+                        const totalHarga = daysDiff * harga;
+                        document.getElementById("totalHarga").value = `Rp. ${totalHarga.toLocaleString()}`;
+                    } else {
+                        alert("Tanggal Check-OUT tidak boleh lebih awal dari tanggal Check-IN.");
+                        document.getElementById("jumlahHari").value = 0;
+                        document.getElementById("totalHarga").value = "Rp. 0";
+                    }
+                }
+            }
+
+            // Event listener untuk otomatis menghitung saat tanggal berubah
+            document.getElementById("checkOUT_Date").addEventListener("change", calculateDays);
+        </script>
+
+
 </body>
 </html>

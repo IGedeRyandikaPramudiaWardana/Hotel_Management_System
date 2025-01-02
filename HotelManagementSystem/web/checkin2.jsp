@@ -1,7 +1,7 @@
 <%-- 
-    Document   : checkin
-    Created on : Dec 27, 2024, 4:14:51?PM
-    Author     : Krisna Anggaradana
+    Document   : checkin2
+    Created on : Dec 30, 2024, 7:55:51?PM
+    Author     : Ryandika
 --%>
 
 
@@ -155,26 +155,26 @@
             </div>
 
             <div class="form-group">
-                <label for="bed">Bed:</label>
-                    <select id="bed" name="bed">
-                        <%
-                            try {
-                                stmt = conn.createStatement();
-                                String sql = "SELECT DISTINCT tipeBed FROM avaibility";
-                                rs = stmt.executeQuery(sql);
+            <label for="bed">Bed:</label>
+            <select id="bed" name="bed">
+                <%
+                    try {
+                        stmt = conn.createStatement();
+                        String sql = "SELECT DISTINCT tipeBed FROM avaibility";
+                        rs = stmt.executeQuery(sql);
 
-                                while (rs.next()) {
-                                    String tipeBed = rs.getString("tipeBed");
-                        %>
-                        <option value="<%= tipeBed %>"><%= tipeBed %></option>
-                        <%
-                                }
-                            } catch (Exception e) {
-                                e.printStackTrace();
-                            }
-                        %>
-                </select>
-            </div>
+                        while (rs.next()) {
+                            String tipeBed = rs.getString("tipeBed");
+                %>
+                <option value="<%= tipeBed %>"><%= tipeBed %></option>
+                <%
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                %>
+            </select>
+        </div>
 
             <div class="form-group">
             <label for="tipeKamar">Tipe Kamar:</label>
@@ -248,7 +248,7 @@
 
 
             <div class="button-group">
-                <button type="submit" class="btn-confirm" value="CheckINHandler2" href="kelolaCheckIN.jsp">Konfirmasi</button>
+                <button type="submit" class="btn-confirm" value="CheckINHandler2" href="kelolaCheckIN2.jsp">Konfirmasi</button>
                 <button type="reset" class="btn-reset" onclick="window.history.clear()">Bersihkan</button>
                 <button type="button" class="btn-back" onclick="window.history.back();">Kembali</button>
             </div>
