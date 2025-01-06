@@ -6,7 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
-<%@page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -129,21 +128,37 @@
             </thead>
             <tbody>
                 <%
-                    List<Map<String, Object>> daftarKamar = 
-                        (List<Map<String, Object>>) request.getAttribute("daftarKamar");
-                    if (daftarKamar != null && !daftarKamar.isEmpty()) {
-                        for (Map<String, Object> kamar : daftarKamar) {
-                            String nomorKamar = (String) kamar.get("nomorKamar");
-                            String tipeKamar = (String) kamar.get("tipeKamar");
-                            String tipeBed = (String) kamar.get("tipeBed");
-                            int harga = (int) kamar.get("harga");
-                            String status = (String) kamar.get("status");
+                    // Koneksi ke database
+                    Connection conn = null;
+                    Statement stmt = null;
+                    ResultSet rs = null;
+
+                    try {
+                        // Load driver
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+
+                        // Ubah username dan password sesuai dengan database Anda
+                        String url = "jdbc:mysql://localhost:3306/test3";
+                        String user = "root"; // username MySQL Anda
+                        String password = ""; // password MySQL Anda (kosong jika default)
+
+                        conn = DriverManager.getConnection(url, user, password);
+                        stmt = conn.createStatement();
+                        String sql = "SELECT * FROM avaibility";
+                        rs = stmt.executeQuery(sql);
+
+                        while (rs.next()) {
+                            String nomorKamar = rs.getString("nomorKamar");
+                            String tipeKamar = rs.getString("tipeKamar");
+                            String tipeBed = rs.getString("tipeBed");
+                            int harga = rs.getInt("harga");
+                            String status = rs.getString("status");
                 %>
                 <tr>
                     <td><%= nomorKamar %></td>
                     <td><%= tipeKamar %></td>
                     <td><%= tipeBed %></td>
-                    <td>Rp <%= String.format("%,d", harga) %></td>
+                    <td>Rp. <%= String.format("%,d", harga) %></td>
                     <td><%= status %></td>
                     <td>
                         <a href="editKamar.jsp?nomorKamar=<%= nomorKamar %>" class="btn btn-edit">Edit</a>
@@ -152,15 +167,20 @@
                 </tr>
                 <%
                         }
-                    } else {
-                %>
-                <tr>
-                    <td colspan="6" style="text-align: center;">Tidak ada data kamar tersedia.</td>
-                </tr>
-                <%
+                    } catch (ClassNotFoundException e) {
+                        out.println("<tr><td colspan='6'>Error: Driver tidak ditemukan!</td></tr>");
+                    } catch (SQLException e) {
+                        out.println("<tr><td colspan='6'>Error: Tidak dapat terhubung ke database!</td></tr>");
+                    } finally {
+                        try {
+                            if (rs != null) rs.close();
+                            if (stmt != null) stmt.close();
+                            if (conn != null) conn.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
                     }
                 %>
-            
             </tbody>
         </table>
 
