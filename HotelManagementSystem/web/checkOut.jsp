@@ -169,7 +169,7 @@
                             rs = stmt.executeQuery(sql);
 
                             while (rs.next()) {
-                                String checkIN_Date = rs.getString("checkIN_Date");
+                                java.sql.Date checkIN_Date = rs.getDate("checkIN_Date");
                     %>
                     <option value="<%= checkIN_Date %>"><%= checkIN_Date %></option>
                     <%

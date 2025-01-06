@@ -105,7 +105,7 @@
             <h2>Silakan Login</h2>
             
             <div class="login">
-                <form action="process.jsp" method="post">
+                <form action="<%= request.getContextPath() %>/prosesLogin" method="post">
                     <label for="username">username:</label>
                     <input type="text" id="username" name="username" required>
                     <br><br>
