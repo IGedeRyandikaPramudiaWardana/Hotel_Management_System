@@ -25,7 +25,7 @@ import java.util.logging.Logger;
  *
  * @author ASUS
  */
-@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/kelolaKamarServlet"})
+@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/proses/kelolaKamarServlet"})
 public class kelolaKamarServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(kelolaKamarServlet.class.getName());

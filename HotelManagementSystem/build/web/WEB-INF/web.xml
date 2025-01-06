@@ -7,7 +7,7 @@
     
     <servlet-mapping>
         <servlet-name>kelolaKamarServlet</servlet-name>
-        <url-pattern>/kelolaKamarServlet</url-pattern>
+        <url-pattern>/proses/kelolaKamarServlet</url-pattern>
     </servlet-mapping>
     
     <session-config>
@@ -17,6 +17,6 @@
     </session-config>
     
     <welcome-file-list>
-        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>mainPage.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

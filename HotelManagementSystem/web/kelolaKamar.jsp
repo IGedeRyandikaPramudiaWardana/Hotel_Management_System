@@ -6,7 +6,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
-<%@page import="java.util.list" %>
+<%@page import="java.util.List" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -130,19 +131,19 @@
             <tbody>
                 <%
                     // Ambil data dari servlet melalui atribut request
-                    List<model.kamar> kamarList = (List<model.kamar>) request.getAttribute("kamarList");
+                    List<connection.kamarCon> kamarList = (List<connection.kamarCon>) request.getAttribute("kamarList");
                     if (kamarList != null && !kamarList.isEmpty()) {
                         for (model.kamar kamar : kamarList) {
                 %>
                 <tr>
-                    <td><%= kamar.getNomorKamar() %></td>
-                    <td><%= kamar.getTipeKamar() %></td>
-                    <td><%= kamar.getTipeBed() %></td>
-                    <td>Rp. <%= String.format("%,.2f", kamar.getHarga()) %></td>
-                    <td><%= kamar.getStatus() %></td>
+                    <td><%= kamarCon.getNomorKamar() %></td>
+                    <td><%= kamarCon.getTipeKamar() %></td>
+                    <td><%= kamarCon.getTipeBed() %></td>
+                    <td>Rp. <%= String.format("%,.2f", kamarCon.getHarga()) %></td>
+                    <td><%= kamarCon.getStatus() %></td>
                     <td>
-                        <a href="editKamar.jsp?nomorKamar=<%= kamar.getNomorKamar() %>" class="btn btn-edit">Edit</a>
-                        <a href="deleteKamar.jsp?nomorKamar=<%= kamar.getNomorKamar() %>" class="btn btn-delete">Delete</a>
+                        <a href="editKamar.jsp?nomorKamar=<%= kamarCon.getNomorKamar() %>" class="btn btn-edit">Edit</a>
+                        <a href="deleteKamar.jsp?nomorKamar=<%= kamarCon.getNomorKamar() %>" class="btn btn-delete">Delete</a>
                     </td>
                 </tr>
                 <%
