@@ -33,7 +33,7 @@ public class kelolaKamarServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOGGER.info("doGet called");
-        List<kamar> kendaraanList = kamarCon.getAllKamar();
+        List<kamar> kamarList = kamarCon.getAllKamar();
         request.setAttribute("kamarList", kamarList);
         request.getRequestDispatcher("stok.jsp").forward(request, response);
     }
@@ -49,11 +49,11 @@ public class kelolaKamarServlet extends HttpServlet {
         double harga = Double.parseDouble(request.getParameter("harga").replace("Rp ", "").replace(".", "").replace(",", ""));
         String status = request.getParameter("status");
 
-        LOGGER.info("Received data: " + nomorPolisi + ", " + merek + ", " + jenis + ", " + stok + ", " + harga + ", " + status);
+        LOGGER.info("Data diterima: " + nomorKamar + ", " + tipeKamar + ", " + tipeBed + ", " + harga + ", " + status);
 
         // Buat objek kendaraan dan simpan ke database
-        kamar kamar = new kamar(nomorPolisi, merek, jenis, stok, harga, status);
-        kendaraanDAO.addKendaraan(kendaraan);
+        kamar kamar = new kamar(nomorKamar, tipeKamar, tipeBed, harga, status);
+        kamarCon.addKamar(kamar);
 
         // Redirect kembali ke halaman daftar kendaraan
         response.sendRedirect("KendaraanServlet");

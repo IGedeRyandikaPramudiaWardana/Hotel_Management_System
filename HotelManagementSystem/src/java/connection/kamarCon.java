@@ -38,7 +38,7 @@ public class kamarCon {
                         rs.getString("nomorKamar"),
                         rs.getString("tipeKamar"),
                         rs.getString("tipeBed"),
-                        rs.getInt("harga"),
+                        rs.getDouble("harga"),
                         rs.getString("status")
                 );
                 kamarList.add(k);
@@ -58,7 +58,7 @@ public class kamarCon {
             ps.setString(1, k.getNomorKamar());
             ps.setString(2, k.getTipeKamar());
             ps.setString(3, k.getTipeBed());
-            ps.setInt(4, k.getHarga());
+            ps.setDouble(4, k.getHarga());
             ps.setString(5, k.getStatus());
             return ps.executeUpdate() > 0;
 
@@ -76,7 +76,7 @@ public class kamarCon {
 
             ps.setString(1, k.getTipeKamar());
             ps.setString(2, k.getTipeBed());
-            ps.setInt(3, k.getHarga());
+            ps.setDouble(3, k.getHarga());
             ps.setString(4, k.getStatus());
             ps.setString(5, k.getNomorKamar());
             return ps.executeUpdate() > 0;

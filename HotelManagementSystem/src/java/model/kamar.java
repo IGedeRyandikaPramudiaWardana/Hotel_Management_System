@@ -12,11 +12,11 @@ public class kamar {
     private String nomorKamar;
     private String tipeKamar;
     private String tipeBed;
-    private int harga;
+    private double harga;
     private String status;
 
     // Constructor
-    public kamar(String nomorKamar, String tipeKamar, String tipeBed, int harga, String status) {
+    public kamar(String nomorKamar, String tipeKamar, String tipeBed, double harga, String status) {
         this.nomorKamar = nomorKamar;
         this.tipeKamar = tipeKamar;
         this.tipeBed = tipeBed;
@@ -49,7 +49,7 @@ public class kamar {
         this.tipeBed = tipeBed;
     }
 
-    public int getHarga() {
+    public double getHarga() {
         return harga;
     }
 
