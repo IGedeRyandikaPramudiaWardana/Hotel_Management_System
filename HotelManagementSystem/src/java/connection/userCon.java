@@ -14,16 +14,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import model.user;
 
+
 public class userCon {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+//    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
+//    private static final String DB_USER = "root";
+//    private static final String DB_PASSWORD = "";
 
     public boolean validateUser(user user) {
         boolean isValid = false;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            //Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            Connection conn = DatabaseConnection.getConnection();
 
             String sql = "SELECT * FROM admin WHERE nama = ? AND password = ?";
             PreparedStatement ps = conn.prepareStatement(sql);

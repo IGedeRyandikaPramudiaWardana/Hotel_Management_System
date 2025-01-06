@@ -16,17 +16,19 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import connection.DatabaseConnection;
 
 
-@WebServlet("/prosesCheckIN/CheckINHandler2") // Mapping URL untuk servlet
+@WebServlet("/CheckINHandler2") // Mapping URL untuk servlet
 public class CheckINHandler2 extends HttpServlet {
     
     private static final long serialVersionUID = 1L;
 
     // Konfigurasi database
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/check";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "";
+//    private static final String DB_URL = "jdbc:mysql://localhost:3306/check";
+//    private static final String DB_USER = "root";
+//    private static final String DB_PASSWORD = "";
+    Connection conn = DatabaseConnection.getConnection();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -59,13 +61,13 @@ response.setContentType("text/html;charset=UTF-8");
             int harga = Integer.parseInt(hargaStr); // Konversi harga ke integer
 
             // Koneksi ke database
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 
             // Query SQL untuk menyimpan data
-            String sql = "INSERT INTO `check-in` (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
+            String sql = "INSERT INTO `checkin` (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            PreparedStatement ps = con.prepareStatement(sql);
+            PreparedStatement ps = conn.prepareStatement(sql);
 
             // Set parameter query
             ps.setString(1, nama);
@@ -94,13 +96,11 @@ response.setContentType("text/html;charset=UTF-8");
 
             // Tutup koneksi
             ps.close();
-            con.close();
+            conn.close();
         } catch (NumberFormatException e) {
             out.println("<h1>Error: Harga harus berupa angka.</h1>");
         } catch (SQLException e) {
             out.println("<h1>Error pada database: " + e.getMessage() + "</h1>");
-        } catch (ClassNotFoundException e) {
-            out.println("<h1>Error: Driver database tidak ditemukan.</h1>");
         } catch (Exception e) {
             out.println("<h1>Error tidak terduga: " + e.getMessage() + "</h1>");
         }

@@ -15,6 +15,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import connection.DatabaseConnection;
 
 /**
  *
@@ -31,7 +32,8 @@ public class mainPageServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test3", "root", "");
+            //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test3", "root", "");
+            Connection conn = DatabaseConnection.getConnection();
 
             /*
             // Menghitung jumlah kendaraan
