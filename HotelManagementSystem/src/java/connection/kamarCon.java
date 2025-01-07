@@ -78,11 +78,11 @@ public class kamarCon {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, k.getNomorKamar());
-            ps.setString(2, k.getTipeKamar());
-            ps.setString(3, k.getTipeBed());
-            ps.setDouble(4, k.getHarga());
-            ps.setString(5, k.getStatus());
+                ps.setString(1, k.getTipeKamar());
+                ps.setString(2, k.getTipeBed());
+                ps.setDouble(3, k.getHarga());
+                ps.setString(4, k.getStatus());
+                ps.setString(5, k.getNomorKamar());
             
             return ps.executeUpdate() > 0;
 
