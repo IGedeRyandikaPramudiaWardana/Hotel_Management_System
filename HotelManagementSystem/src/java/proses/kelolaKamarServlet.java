@@ -11,16 +11,18 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import model.kamar;
-import connection.DatabaseConnection;
-import connection.kamarCon;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
- // ini error kenapa
+
+import model.kamar;
+import connection.DatabaseConnection;
+import connection.kamarCon;
+
 /**
  *
  * @author ASUS
@@ -35,7 +37,7 @@ public class kelolaKamarServlet extends HttpServlet {
         LOGGER.info("doGet called");
         List<kamar> kamarList = kamarCon.getAllKamar();
         request.setAttribute("kamarList", kamarList);
-        request.getRequestDispatcher("kelolaKamar.jsp").forward(request, response);
+        request.getRequestDispatcher("/kelolaKamar.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -56,6 +58,6 @@ public class kelolaKamarServlet extends HttpServlet {
         kamarCon.addKamar(kamar);
 
         // Redirect kembali ke halaman daftar kendaraan
-        response.sendRedirect("KendaraanServlet");
+        response.sendRedirect("/kelolaKamarServlet");
     }
 }

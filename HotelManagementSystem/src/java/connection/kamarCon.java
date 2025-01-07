@@ -22,14 +22,18 @@ import connection.DatabaseConnection;
 
 
 public class kamarCon {
-//    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
-//    private static final String DB_USER = "root";
-//    private static final String DB_PASSWORD = "";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
+    private Connection getConnection() throws SQLException {
+    return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+    }
     // Menampilkan semua data kamar
     public List<kamar> getAllKamar() {
         List<kamar> kamarList = new ArrayList<>();
-        try (Connection conn = DatabaseConnection.getConnection();
+        
+        try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery("SELECT * FROM avaibility")) {
 
@@ -74,11 +78,12 @@ public class kamarCon {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, k.getTipeKamar());
-            ps.setString(2, k.getTipeBed());
-            ps.setDouble(3, k.getHarga());
-            ps.setString(4, k.getStatus());
-            ps.setString(5, k.getNomorKamar());
+            ps.setString(1, k.getNomorKamar());
+            ps.setString(2, k.getTipeKamar());
+            ps.setString(3, k.getTipeBed());
+            ps.setDouble(4, k.getHarga());
+            ps.setString(5, k.getStatus());
+            
             return ps.executeUpdate() > 0;
 
         } catch (SQLException e) {

@@ -4,18 +4,26 @@
         <servlet-name>kelolaKamarServlet</servlet-name>
         <servlet-class>proses.kelolaKamarServlet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>kelolaKamarServlet</servlet-name>
         <url-pattern>/proses/kelolaKamarServlet</url-pattern>
     </servlet-mapping>
-    
+
+    <servlet>
+        <servlet-name>kelolaKamarServlet</servlet-name>
+        <servlet-class>proses.kelolaKamarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>kelolaKamarServlet</servlet-name>
+        <url-pattern>/kelolaKamarServlet</url-pattern>
+    </servlet-mapping>
+
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
     <welcome-file-list>
         <welcome-file>mainPage.jsp</welcome-file>
     </welcome-file-list>

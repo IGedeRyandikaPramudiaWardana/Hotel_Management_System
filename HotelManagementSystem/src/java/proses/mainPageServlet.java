@@ -35,14 +35,14 @@ public class mainPageServlet extends HttpServlet {
             //Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test3", "root", "");
             Connection conn = DatabaseConnection.getConnection();
 
-            /*
+            
             // Menghitung jumlah kendaraan
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM kendaraan");
+            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM avaibility");
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 jumlahKendaraan = rs.getInt(1);
             }
-
+            /*
             // Menghitung jumlah peminjam
             ps = conn.prepareStatement("SELECT COUNT(*) FROM peminjaman");
             rs = ps.executeQuery();
@@ -63,8 +63,9 @@ public class mainPageServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        /*
+        
         request.setAttribute("jumlahKendaraan", jumlahKendaraan);
+        /*
         request.setAttribute("jumlahPeminjam", jumlahPeminjam);
         request.setAttribute("jumlahPengembalian", jumlahPengembalian);
         */

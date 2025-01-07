@@ -6,8 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
-<%@page import="java.util.List" %>
-<%@page import="model.kamar" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -125,38 +123,55 @@
                     <th>Tipe Bed</th>
                     <th>Harga (Rupiah)</th>
                     <th>Status</th>
-                    <th>Aksi</th>
+                    
                 </tr>
             </thead>
             <tbody>
-                    <%
-                        List<kamar> kamarList = (List<kamar>) request.getAttribute("kamarList");
-                        if (kamarList != null && !kamarList.isEmpty()) {
-                            for (kamar kamar : kamarList) {
-                    %>
-                                <tr onclick="selectKamar('<%= kamar.getNomorKamar() %>', '<%= kamar.getTipeKamar() %>', '<%= kamar.getTipeBed() %>', '<%= kamar.getHarga() %>')">
-                                    <td><%= kamar.getNomorKamar() %></td>
-                                    <td><%= kamar.getTipeKamar() %></td>
-                                    <td><%= kamar.getTipeBed() %></td>
-                                    <td>Rp <%= String.format("%,.2f", kamar.getHarga()) %></td>
-                                    <td><%= kamar.getStatus() %></td>
-                                </tr>
-                    <%
-                            }
-                        } else {
-                    %>
-                        <tr>
-                            <td colspan="6">Tidak ada data kamar.</td>
-                        </tr>
-                    <%
+                <%
+                    // Koneksi ke database
+                    Connection conn = null;
+                    Statement stmt = null;
+                    ResultSet rs = null;
+
+                    try {
+                        Class.forName("com.mysql.cj.jdbc.Driver");
+                        conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test");
+                        stmt = conn.createStatement();
+                        String sql = "SELECT * FROM status";
+                        rs = stmt.executeQuery(sql);
+
+                        while (rs.next()) {
+                            int nomorKamar = rs.getInt("nomorKamar");
+                            String tipeKamar = rs.getString("tipeKamar");
+                            String tipeBed = rs.getString("tipeBed");
+                            int harga = rs.getInt("harga");
+                            String status = rs.getString("status");
+                %>
+                <tr>
+                    <td><%= nomorKamar %></td>
+                    <td><%= tipeKamar %></td>
+                    <td><%= tipeBed %></td>
+                    <td>Rp. <%= String.format("%,d", harga) %></td>
+                    <td><%= status %></td>
+                </tr>
+                <%
                         }
-                    %>
-                </tbody>
-            
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try {
+                            if (rs != null) rs.close();
+                            if (stmt != null) stmt.close();
+                            if (conn != null) conn.close();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                %>
+            </tbody>
         </table>
 
-        <!-- Tambah Kamar Baru -->
-        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>
+       
 
     </body>
 </html>

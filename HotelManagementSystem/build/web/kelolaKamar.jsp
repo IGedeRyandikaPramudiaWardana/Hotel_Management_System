@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <%@page import="java.util.List" %>
-
+<%@page import="model.kamar" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -129,37 +129,34 @@
                 </tr>
             </thead>
             <tbody>
-                <%
-                    // Ambil data dari servlet melalui atribut request
-                    List<connection.kamarCon> kamarList = (List<connection.kamarCon>) request.getAttribute("kamarList");
-                    if (kamarList != null && !kamarList.isEmpty()) {
-                        for (model.kamar kamar : kamarList) {
-                %>
-                <tr>
-                    <td><%= kamarCon.getNomorKamar() %></td>
-                    <td><%= kamarCon.getTipeKamar() %></td>
-                    <td><%= kamarCon.getTipeBed() %></td>
-                    <td>Rp. <%= String.format("%,.2f", kamarCon.getHarga()) %></td>
-                    <td><%= kamarCon.getStatus() %></td>
-                    <td>
-                        <a href="editKamar.jsp?nomorKamar=<%= kamarCon.getNomorKamar() %>" class="btn btn-edit">Edit</a>
-                        <a href="deleteKamar.jsp?nomorKamar=<%= kamarCon.getNomorKamar() %>" class="btn btn-delete">Delete</a>
-                    </td>
-                </tr>
-                <%
+                    <%
+                        List<kamar> kamarList = (List<kamar>) request.getAttribute("kamarList");
+                        if (kamarList != null && !kamarList.isEmpty()) {
+                            for (kamar kamar : kamarList) {
+                    %>
+                                <tr onclick="selectKamar('<%= kamar.getNomorKamar() %>', '<%= kamar.getTipeKamar() %>', '<%= kamar.getTipeBed() %>', '<%= kamar.getHarga() %>')">
+                                    <td><%= kamar.getNomorKamar() %></td>
+                                    <td><%= kamar.getTipeKamar() %></td>
+                                    <td><%= kamar.getTipeBed() %></td>
+                                    <td>Rp <%= String.format("%,.2f", kamar.getHarga()) %></td>
+                                    <td><%= kamar.getStatus() %></td>
+                                </tr>
+                    <%
+                            }
+                        } else {
+                    %>
+                        <tr>
+                            <td colspan="6">Tidak ada data kamar.</td>
+                        </tr>
+                    <%
                         }
-                    } else {
-                %>
-                <tr>
-                    <td colspan="6" style="text-align:center;">Data kamar tidak tersedia.</td>
-                </tr>
-                <%
-                    }
-                %>
-            </tbody>
+                    %>
+                </tbody>
+            
         </table>
 
         <!-- Tambah Kamar Baru -->
         <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>
+
     </body>
 </html>
