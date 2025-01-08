@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<% 
+    String akses = (String) session.getAttribute("akses");
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -141,7 +146,11 @@
     <body>
         <!-- Header -->
         <div class="header">Hotel Management System</div>
-        
+        <% if ("admin".equals(akses)) { %>
+            <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+        <% } else { %>
+            <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+        <% } %>
         <!-- Tombol Buka Sidebar -->
         <button class="open-sidebar-btn" onclick="toggleSidebar()">☰ Menu</button>
         
@@ -156,7 +165,11 @@
                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
                 <a href="#" onclick="loadContent('kelolaCheckIN.jsp')">Kelola Check-IN</a>
                 <a href="login.jsp">Logout</a>
-                <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+                <% if ("admin".equals(akses)) { %>
+                    <!-- Menu khusus admin -->
+                    <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+                <% } %>
+                
             </div>
         </div>
         

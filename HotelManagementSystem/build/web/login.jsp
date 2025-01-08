@@ -105,7 +105,7 @@
             <h2>Silakan Login</h2>
             
             <div class="login">
-                <form action="<%= request.getContextPath() %>/prosesLogin" method="post">
+                <form action="<%= request.getContextPath() %>/loginServlet" method="post">
                     <label for="username">username:</label>
                     <input type="text" id="username" name="username" required>
                     <br><br>
@@ -113,6 +113,14 @@
                     <input type="password" id="password" name="password" required>
                     <br><br>
                     <button type="enter">Enter</button>
+                    <%
+                        if (request.getParameter("error") != null) {
+                    %>
+                        <div class="error-message">Username atau password salah!</div>
+                    <%
+                        }
+                    %>
+                </form>
             </div>
         </main>
     </body>

@@ -78,12 +78,12 @@ public class kamarCon {
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-                ps.setString(1, k.getTipeKamar());
-                ps.setString(2, k.getTipeBed());
-                ps.setDouble(3, k.getHarga());
-                ps.setString(4, k.getStatus());
-                ps.setString(5, k.getNomorKamar());
-            
+            ps.setString(1, k.getTipeKamar());
+            ps.setString(2, k.getTipeBed());
+            ps.setDouble(3, k.getHarga());
+            ps.setString(4, k.getStatus());
+            ps.setString(5, k.getNomorKamar());
+
             return ps.executeUpdate() > 0;
 
         } catch (SQLException e) {
@@ -91,6 +91,7 @@ public class kamarCon {
             return false;
         }
     }
+
 
     // Menghapus data kamar
     public boolean deleteKamar(String nomorKamar) {
@@ -106,4 +107,26 @@ public class kamarCon {
             return false;
         }
     }
+    
+    
+    public List<String> getEnumValues(String columnName) {
+        List<String> enumValues = new ArrayList<>();
+        String query = "SHOW COLUMNS FROM avaibility WHERE Field = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, columnName);
+            ResultSet resultSet = statement.executeQuery();
+            if (resultSet.next()) {
+                String type = resultSet.getString("Type");
+                String[] values = type.substring(type.indexOf("(") + 1, type.lastIndexOf(")")).split(",");
+                for (String value : values) {
+                    enumValues.add(value.replace("'", "").trim());
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return enumValues;
+    }
+
 }

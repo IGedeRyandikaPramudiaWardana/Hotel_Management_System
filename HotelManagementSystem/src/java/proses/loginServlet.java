@@ -17,8 +17,8 @@ import connection.userCon;
  *
  * @author ASUS
  */
-@WebServlet(name = "prosesLogin", urlPatterns = {"/prosesLogin"})
-public class prosesLogin extends HttpServlet {
+@WebServlet("/loginServlet")
+public class loginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,11 +28,13 @@ public class prosesLogin extends HttpServlet {
 
         // Create User object and validate using DAO
         user user = new user(username, password);
-        userCon userDAO = new userCon();
-        boolean isValid = userDAO.validateUser(user);
+        userCon userCon = new userCon();
+        boolean isValid = userCon.validateUser(user);
 
         if (isValid) {
             // Redirect to home page or dashboard
+            String akses = user.getAkses();
+            request.getSession().setAttribute("akses", akses);
             response.sendRedirect(request.getContextPath() + "/mainPageServlet");
         } else {
             // Redirect back to login with error message

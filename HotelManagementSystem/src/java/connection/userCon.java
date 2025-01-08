@@ -16,31 +16,53 @@ import model.user;
 
 
 public class userCon {
-//    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
-//    private static final String DB_USER = "root";
-//    private static final String DB_PASSWORD = "";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
+    private static final String DB_USER = "root";
+    private static final String DB_PASSWORD = "";
 
     public boolean validateUser(user user) {
-        boolean isValid = false;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            //Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            Connection conn = DatabaseConnection.getConnection();
+        //boolean isValid = false;
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            //Connection conn = DatabaseConnection.getConnection();
 
-            String sql = "SELECT * FROM admin WHERE nama = ? AND password = ?";
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setString(1, user.getUsername());
-            ps.setString(2, user.getPassword());
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                isValid = true;
+            //String sql = "SELECT akses FROM admin WHERE nama = ? AND password = ?";
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+                String sql = "SELECT akses FROM admin WHERE nama = ? AND password = ?";
+                PreparedStatement ps = conn.prepareCall(sql);
+                
+                ps.setString(1, user.getUsername());
+                ps.setString(2, user.getPassword());
+                
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    user.setAkses(rs.getString("akses")); // Set role ke user
+                    return true; // Valid user
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-
-            conn.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return isValid;
-    }
+        return false;
+            }
 }
+            
+            
+//            PreparedStatement ps = conn.prepareStatement(sql);
+//            ps.setString(1, user.getUsername());
+//            ps.setString(2, user.getPassword());
+//            ResultSet rs = ps.executeQuery();
+//
+//            if (rs.next()) {
+//                isValid = true;
+//            }
+//
+//            conn.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return isValid;
+//    }
+//}

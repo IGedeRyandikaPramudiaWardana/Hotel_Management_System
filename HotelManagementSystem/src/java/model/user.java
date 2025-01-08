@@ -11,9 +11,10 @@ package model;
 public class user {
     private String username;
     private String password;
+    private String akses;
 
     // Constructor
-    public user() {}
+    //public user() {}
 
     public user(String username, String password) {
         this.username = username;
@@ -35,5 +36,13 @@ public class user {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public String getAkses(){
+        return akses;
+    }
+    
+    public void setAkses(String akses){
+        this.akses = akses;
     }
 }

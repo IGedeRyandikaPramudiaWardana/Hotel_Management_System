@@ -4,27 +4,30 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckIN.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/tambahKamarServlet.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/model/user.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar2.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/connector2.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/DatabaseConnection.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/login.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckIN2.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/kamarCon.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckOUT.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/prosesLogin.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkin.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/mainPage.jsp</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/model/user.java</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar2.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/CheckINHandlerOri.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkOut.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/CheckINHandler2.java</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/connector2.jsp</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/userCon.java</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/DatabaseConnection.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/editKamar.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/tambahKamar.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/mainPage2.jsp</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/login.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/kelolaKamarServlet.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/web.xml</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/model/kamar.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/mainPageServlet.java</file>
-            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckIN2.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkin2.jsp</file>
         </group>
     </open-files>

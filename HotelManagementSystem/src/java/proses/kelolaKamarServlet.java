@@ -58,6 +58,6 @@ public class kelolaKamarServlet extends HttpServlet {
         kamarCon.addKamar(kamar);
 
         // Redirect kembali ke halaman daftar kendaraan
-        response.sendRedirect("/kelolaKamarServlet");
+        response.sendRedirect("/proses/kelolaKamarServl");
     }
 }

@@ -73,8 +73,8 @@
                 background-color: #e74c3c;
                 color: white;
             }
-
-            .btn-add {
+ 
+            .add-stock {
                 display: block;
                 width: 150px;
                 margin: 20px auto;
@@ -85,7 +85,17 @@
                 border-radius: 5px;
                 text-decoration: none;
             }
-
+            
+            .add-stock button {
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            
             .form-group {
                 margin-bottom: 15px;
             }
@@ -140,6 +150,18 @@
                                     <td><%= kamar.getTipeBed() %></td>
                                     <td>Rp <%= String.format("%,.2f", kamar.getHarga()) %></td>
                                     <td><%= kamar.getStatus() %></td>
+                                    <td>
+                                        <form action="<%= request.getContextPath() %>/proses/kelolaKamarServlet" method="post" style="display:inline;">
+                                            <input type="hidden" name="action" value="edit">
+                                            <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
+                                            <button type="submit" class="btn btn-edit">Edit</button>
+                                        </form>
+                                        <form action="<%= request.getContextPath() %>/proses/kelolaKamarServlet" method="post" style="display:inline;">
+                                            <input type="hidden" name="action" value="delete">
+                                            <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
+                                            <button type="submit" class="btn btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?')">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                     <%
                             }
@@ -155,8 +177,44 @@
             
         </table>
 
+        <div class="add-stock">
+            <button onclick="showModal()">Tambah Kamar Baru</button>
+            
+        </div>
+                
+                
+        <div id="inputModal" class="modal">
+            <div class="modal-content">
+                <h3>Tambah Kamar Baru</h3>
+                <form action="KendaraanServlet" method="post">
+                    <input type="hidden" name="action" value="add">
+                    <input type="text" name="nomorKamar" placeholder="TomorKamar" required>
+                    <input type="text" name="tipeKamar" placeholder="TipeKamar" required>
+                    <input type="text" name="tipeBed" placeholder="TipeBed" required>
+                    <input type="text" name="harga" placeholder="Harga" required>
+                    <input type="text" name="status" placeholder="Status" value="Avaible" hidden>
+                    <button type="submit">Tambah</button>
+                </form>
+            </div>
+        </div>
+                
+                
+                
+    <script>
+        function showModal() {
+            document.getElementById('inputModal').style.display = 'flex';
+        }
+
+        // Menutup modal saat klik di luar modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('inputModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script> 
         <!-- Tambah Kamar Baru -->
-        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>
+<!--        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>-->
 
     </body>
 </html>

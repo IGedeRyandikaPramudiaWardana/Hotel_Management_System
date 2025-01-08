@@ -26,9 +26,9 @@ public class mainPageServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int jumlahKendaraan = 0;
-        int jumlahPeminjam = 0;
-        int jumlahPengembalian = 0;
+//        int jumlahKendaraan = 0;
+//        int jumlahPeminjam = 0;
+//        int jumlahPengembalian = 0;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -37,11 +37,11 @@ public class mainPageServlet extends HttpServlet {
 
             
             // Menghitung jumlah kendaraan
-            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM avaibility");
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                jumlahKendaraan = rs.getInt(1);
-            }
+//            PreparedStatement ps = conn.prepareStatement("SELECT COUNT(*) FROM avaibility");
+//            ResultSet rs = ps.executeQuery();
+//            if (rs.next()) {
+//                jumlahKendaraan = rs.getInt(1);
+//            }
             /*
             // Menghitung jumlah peminjam
             ps = conn.prepareStatement("SELECT COUNT(*) FROM peminjaman");
@@ -64,7 +64,7 @@ public class mainPageServlet extends HttpServlet {
         }
 
         
-        request.setAttribute("jumlahKendaraan", jumlahKendaraan);
+//        request.setAttribute("jumlahKendaraan", jumlahKendaraan);
         /*
         request.setAttribute("jumlahPeminjam", jumlahPeminjam);
         request.setAttribute("jumlahPengembalian", jumlahPengembalian);
