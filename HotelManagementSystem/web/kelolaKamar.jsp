@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kelola Kamar</title>
-        <style>
+         <style>
             body {
                 font-family: 'Roboto', sans-serif;
                 background-color: #f4f4f4;
@@ -62,6 +62,7 @@
                 cursor: pointer;
                 border-radius: 5px;
                 font-size: 14px;
+                transition: transform 0.1s ease, background-color 0.1s ease; /* Animasi untuk perubahan */
             }
 
             .btn-edit {
@@ -69,31 +70,43 @@
                 color: white;
             }
 
+            .btn-edit:hover{
+                background-color: #17a351;
+                color: white;
+                transform: scale(1.1); /* Membuat tombol lebih besar */
+            }
+
             .btn-delete {
                 background-color: #e74c3c;
                 color: white;
             }
- 
-            .add-stock {
+            
+            .btn-delete:hover{
+                background-color: #c62513;
+                color: white;
+                transform: scale(1.1); /* Membuat tombol lebih besar */
+
+            }
+            
+            .add-stock button {
                 display: block;
-                width: 150px;
+                padding: 10px 20px;
+                width: 165px;
                 margin: 20px auto;
                 background-color: #3498db;
                 color: white;
                 text-align: center;
-                padding: 10px;
-                border-radius: 5px;
-                text-decoration: none;
-            }
-            
-            .add-stock button {
-                padding: 10px 20px;
-                background-color: #4CAF50;
-                color: white;
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
                 margin-top: 20px;
+                transition: transform 0.1s ease, background-color 0.1s ease; /* Animasi untuk perubahan */
+            }
+
+            .add-stock button:hover{
+                background-color: #08629e;
+                transform: scale(1.1); /* Membuat tombol lebih besar */
+
             }
             
             .form-group {
@@ -120,6 +133,49 @@
                 padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .modal-content {
+                background-color: white;
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 500px;
+                width: 100%;
+                text-align: center;
+            }
+    
+            .modal-content input {
+                width: 90%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+            }
+    
+            .modal-content button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            .modal-content button:hover {
+                background-color: #45a049;
             }
         </style>
     </head>
