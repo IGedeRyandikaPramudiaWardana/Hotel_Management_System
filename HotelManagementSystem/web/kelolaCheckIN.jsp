@@ -132,7 +132,7 @@
 
                         conn = DriverManager.getConnection(url, user, password);
                         stmt = conn.createStatement();
-                        String sql = "SELECT * FROM `check-in`";
+                        String sql = "SELECT * FROM `checkin`";
                         rs = stmt.executeQuery(sql);
 
                         while (rs.next()) {

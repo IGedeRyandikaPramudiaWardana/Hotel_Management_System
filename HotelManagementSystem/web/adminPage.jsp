@@ -74,21 +74,21 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nama Penyewa</th>
-                    <th>Email</th>
-                    <th>Alamat</th>
-                    <th>Tipe Kamar</th>
-                    <th>Booking Status</th>
+                    <th>Id </th>
+                    <th>Nama</th>
+                    <th>Pasword</th>
+                    <th>Akses</th>
+                    
                 </tr>
             </thead>
             <tbody>
     
                 <tr>
-                    <td>booking.name</td>
-                    <td>booking.email</td>
-                    <td>booking.address</td>
-                    <td>booking.roomType</td>
-                    <td>booking.status</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    
                 </tr>
                
             </tbody>
