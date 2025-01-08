@@ -8,6 +8,11 @@
 <%@page import="java.sql.*" %>
 <%@page import="java.util.List" %>
 <%@page import="model.kamar" %>
+
+<% 
+    String akses = (String) session.getAttribute("akses");
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,6 +20,113 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kelola Kamar</title>
          <style>
+             .header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #3498db;
+                color: #fff;
+                padding: 20px 0;
+                text-align: center;
+                font-size: 24px;
+                z-index: 1000;
+                height: 70px; /* Sesuaikan tinggi header */
+                box-sizing: border-box; /* Pastikan padding masuk dalam ukuran elemen */
+            }
+
+            /* Sidebar */
+            .sidebar {
+                position: fixed;
+                top: 0; /* Posisi sidebar dimulai setelah header */
+                left: -250px; /* Hidden by default */
+                width: 250px;
+                height: 100%; /* Sesuaikan tinggi sidebar agar menutupi sisa layar */
+                background-color: #3498db;
+                color: #fff;
+                overflow-y: auto;
+                transition: left 0.3s ease;
+                z-index: 1001; /* Tetap di depan konten tetapi di bawah header */
+                box-sizing: border-box; /* Pastikan padding masuk dalam ukuran elemen */
+            }
+
+            .sidebar a {
+                display: block;
+                padding: 10px 20px;
+                color: #ddd;
+                text-decoration: none;
+                border-bottom: 1px solid #3498db;
+                box-sizing: border-box; /* Pastikan padding tidak menyebabkan pergeseran */
+            }
+
+            .sidebar a:hover {
+                background-color: #2c88c5;
+                color: #fff;
+            }
+
+            .sidebar .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 50px;
+                margin-right: 10px;
+                cursor: pointer;
+                color: #fff;
+            }
+
+            /* Open Sidebar Button */
+            .open-sidebar-btn {
+                position: fixed;
+                top: 10px;
+                left: 20px;
+                background-color: #3498db;
+                color: #fff;
+                padding: 5px 10px;
+                border: none;
+                cursor: pointer;
+                z-index: 1002; /* Tombol berada di depan elemen lain */
+                border-radius: 5px;
+                font-size: 20px;
+            }
+
+            .open-sidebar-btn:hover {
+                background-color: #2c88c5;
+            }
+
+            .sidebar .pilihanMenu {
+                margin-top: 55px;
+            }
+
+            /* Content Area */
+            .content {
+                margin: 100px 20px;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Sidebar Active State */
+            .sidebar.active {
+                left: 0; /* Sidebar muncul saat aktif */
+            }
+
+            /* Overlay */
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Transparan hitam */
+                z-index: 1000;
+                display: none; /* Sembunyikan overlay secara default */
+            }
+
+            .overlay.active {
+                display: block; /* Tampilkan overlay saat aktif */
+            }
+            
             body {
                 font-family: 'Roboto', sans-serif;
                 background-color: #f4f4f4;
@@ -145,6 +257,11 @@
                 background-color: rgba(0, 0, 0, 0.5);
                 justify-content: center;
                 align-items: center;
+                z-index: 1000;
+            }
+            
+            .modal.show {
+                display: flex; /* Menampilkan modal */
             }
     
             .modal-content {
@@ -180,6 +297,41 @@
         </style>
     </head>
     <body>
+        <div class="header">Hotel Management System</div>
+
+        <% if ("admin".equals(akses)) { %>
+            <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+        <% } else { %>
+            <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+        <% } %>
+        <!-- Tombol Buka Sidebar -->
+        <button class="open-sidebar-btn" onclick="toggleSidebar()">☰ Menu</button>
+        
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="pilihanMenu">
+                <!-- Menu Main Page -->
+                <a onclick="location.href='mainPageServlet'">Main Page</a>
+                <a onclick="location.href='proses/kelolaKamarServlet'">Kelola Kamar</a>
+                <a href="#" onclick="loadContent('checkin.jsp')">Check-In</a>
+                <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
+                <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+                <a href="#" onclick="loadContent('kelolaCheckIN.jsp')">Kelola Check-IN</a>
+                <a href="login.jsp">Logout</a>
+                <% if ("admin".equals(akses)) { %>
+                    <!-- Menu khusus admin -->
+                    <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+                <% } %>
+                
+            </div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+
+
+        
         <h1>Kelola Kamar Hotel</h1>
 
         <!-- Tabel untuk menampilkan kamar -->
@@ -242,7 +394,7 @@
         <div id="inputModal" class="modal">
             <div class="modal-content">
                 <h3>Tambah Kamar Baru</h3>
-                <form action="KendaraanServlet" method="post">
+                <form action="kelolaKamarServlet" method="post">
                     <input type="hidden" name="action" value="add">
                     <input type="text" name="nomorKamar" placeholder="TomorKamar" required>
                     <input type="text" name="tipeKamar" placeholder="TipeKamar" required>
@@ -258,19 +410,50 @@
                 
     <script>
         function showModal() {
-            document.getElementById('inputModal').style.display = 'flex';
+            const modal = document.getElementById('inputModal');
+            modal.classList.add('show');
+            console.log("Modal ditampilkan");
         }
 
         // Menutup modal saat klik di luar modal
         window.onclick = function(event) {
             const modal = document.getElementById('inputModal');
             if (event.target == modal) {
-                modal.style.display = 'none';
+                modal.classList.remove('show');
+                console.log("Modal ditutup");
             }
         };
     </script> 
         <!-- Tambah Kamar Baru -->
 <!--        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>-->
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        // Fungsi untuk memuat halaman JSP secara dinamis
+        function loadContent(page) {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("content-area").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", page, true);
+            xhttp.send();
+        }
+
+        // Fungsi untuk menampilkan kembali halaman utama
+        function loadMainPage() {
+            document.getElementById("content-area").innerHTML = `
+                <h1>Selamat Datang di Hotel Management System</h1>
+                <p>Konten halaman utama akan ditampilkan di sini.</p>
+            `;
+        }
+    </script>
 
     </body>
 </html>
