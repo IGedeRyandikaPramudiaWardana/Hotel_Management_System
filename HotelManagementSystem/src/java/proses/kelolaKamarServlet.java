@@ -27,7 +27,7 @@ import connection.kamarCon;
  *
  * @author ASUS
  */
-@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/proses/kelolaKamarServlet"})
+@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/kelolaKamarServlet"})
 public class kelolaKamarServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger LOGGER = Logger.getLogger(kelolaKamarServlet.class.getName());
@@ -54,10 +54,10 @@ public class kelolaKamarServlet extends HttpServlet {
         LOGGER.info("Data diterima: " + nomorKamar + ", " + tipeKamar + ", " + tipeBed + ", " + harga + ", " + status);
 
         // Buat objek kendaraan dan simpan ke database
-        kamar kamar = new kamar(nomorKamar, tipeKamar, tipeBed, harga, status);
-        kamarCon.addKamar(kamar);
+        kamar k = new kamar(nomorKamar, tipeKamar, tipeBed, harga, status);
+        kamarCon.addKamar(k);
 
         // Redirect kembali ke halaman daftar kendaraan
-        response.sendRedirect("/proses/kelolaKamarServl");
+        response.sendRedirect("/kelolaKamarServlet");
     }
 }

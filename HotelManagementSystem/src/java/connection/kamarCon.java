@@ -9,15 +9,11 @@ package connection;
  * @author ASUS
  */
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import model.kamar;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import model.kamar;
-import connection.DatabaseConnection;
+import java.util.logging.Logger;
 
 
 
@@ -25,6 +21,7 @@ public class kamarCon {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
+    private static final Logger LOGGER = Logger.getLogger(kamarCon.class.getName());
 
     private Connection getConnection() throws SQLException {
     return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
@@ -54,9 +51,11 @@ public class kamarCon {
     }
 
     // Menambahkan kamar baru
-    public boolean addKamar(kamar k) {
+    public void addKamar(kamar k) {
         String sql = "INSERT INTO avaibility (nomorKamar, tipeKamar, tipeBed, harga, status) VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = DatabaseConnection.getConnection();
+        LOGGER.info("Executing query: " + sql);
+        
+        try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, k.getNomorKamar());
@@ -64,47 +63,67 @@ public class kamarCon {
             ps.setString(3, k.getTipeBed());
             ps.setDouble(4, k.getHarga());
             ps.setString(5, k.getStatus());
-            return ps.executeUpdate() > 0;
+            
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0){
+                LOGGER.info("Data berhasil ditambahkan: " + k.getNomorKamar());
+            } else {
+                LOGGER.warning("Data gagal ditambahkan: " +k.getNomorKamar());
+            }
 
         } catch (SQLException e) {
+            LOGGER.severe("Database error: " + e.getMessage());
             e.printStackTrace();
-            return false;
         }
+        
     }
 
     // Mengedit data kamar
-    public boolean updateKamar(kamar k) {
+    public void updateKamar(kamar k) {
         String sql = "UPDATE avaibility SET tipeKamar = ?, tipeBed = ?, harga = ?, status = ? WHERE nomorKamar = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        LOGGER.info("Executing query: " + sql);
+        
+        try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, k.getTipeKamar());
-            ps.setString(2, k.getTipeBed());
-            ps.setDouble(3, k.getHarga());
-            ps.setString(4, k.getStatus());
-            ps.setString(5, k.getNomorKamar());
-
-            return ps.executeUpdate() > 0;
+            ps.setString(1, k.getNomorKamar());
+            ps.setString(2, k.getTipeKamar());
+            ps.setString(3, k.getTipeBed());
+            ps.setDouble(4, k.getHarga());
+            ps.setString(5, k.getStatus());
+            
+            int rowsAffected = ps.executeUpdate();
+            if(rowsAffected > 0){
+                LOGGER.info("Data berhasil ditambahkan: " + k.getNomorKamar());
+            } else {
+                LOGGER.warning("Data gagal ditambahkan: " +k.getNomorKamar());
+            }
 
         } catch (SQLException e) {
+            LOGGER.severe("Database error: " + e.getMessage());
             e.printStackTrace();
-            return false;
         }
     }
 
 
     // Menghapus data kamar
-    public boolean deleteKamar(String nomorKamar) {
+    public void deleteKamar(String nomorKamar) {
         String sql = "DELETE FROM avaibility WHERE nomorKamar = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, nomorKamar);
-            return ps.executeUpdate() > 0;
+
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                System.out.println("Data kamar berhasil dihapus.");
+            } else {
+                System.out.println("Data kamar tidak ditemukan.");
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
+            throw new RuntimeException("Gagal menghapus data kamar: " + e.getMessage());
         }
     }
     

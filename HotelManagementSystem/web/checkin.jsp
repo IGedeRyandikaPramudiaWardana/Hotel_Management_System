@@ -109,7 +109,7 @@
             <h1>Manajemen Reservasi Hotel</h1>
         </div>
         <h1>Customer Check-IN</h1>
-        <form action="prosesCheckIN/CheckINHandler2" method="get">
+        <form action="proses/CheckINHandler2" method="get">
             <div class="form-group">
                 <label for="nama">Nama:</label>
                 <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
