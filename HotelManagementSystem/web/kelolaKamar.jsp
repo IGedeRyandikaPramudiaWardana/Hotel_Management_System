@@ -20,6 +20,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kelola Kamar</title>
          <style>
+            h1 {
+                text-align: center;
+                margin-top: 50px;
+                color: #444;
+            }
+             
              .header {
                 position: fixed;
                 top: 0;
@@ -290,6 +296,32 @@
                 border-radius: 5px;
                 cursor: pointer;
             }
+            
+            .modal-content select {
+                width: 92%;
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                background-color: #f9f9f9;
+                font-size: 14px;
+                color: #333;
+            }
+
+            .modal-content select:focus {
+                border-color: #4CAF50;
+                outline: none;
+            }
+
+            .modal-content label {
+                display: block;
+                text-align: left;
+                margin: 10px 0 5px;
+                font-weight: bold;
+                font-size: 14px;
+                color: #555;
+            }
+
     
             .modal-content button:hover {
                 background-color: #45a049;
@@ -297,12 +329,12 @@
         </style>
     </head>
     <body>
+        
         <div class="header">Hotel Management System</div>
-
         <% if ("admin".equals(akses)) { %>
-            <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+            <p></p>
         <% } else { %>
-            <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+            <p></p>
         <% } %>
         <!-- Tombol Buka Sidebar -->
         <button class="open-sidebar-btn" onclick="toggleSidebar()">☰ Menu</button>
@@ -312,7 +344,7 @@
             <div class="pilihanMenu">
                 <!-- Menu Main Page -->
                 <a onclick="location.href='mainPageServlet'">Main Page</a>
-                <a onclick="location.href='proses/kelolaKamarServlet'">Kelola Kamar</a>
+                <a onclick="location.href='kelolaKamarServlet'">Kelola Kamar</a>
                 <a href="#" onclick="loadContent('checkin.jsp')">Check-In</a>
                 <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
@@ -359,12 +391,12 @@
                                     <td>Rp <%= String.format("%,.2f", kamar.getHarga()) %></td>
                                     <td><%= kamar.getStatus() %></td>
                                     <td>
-                                        <form action="<%= request.getContextPath() %>/proses/kelolaKamarServlet" method="post" style="display:inline;">
+                                        <form action="<%= request.getContextPath() %>/kelolaKamarServlet" method="post" style="display:inline;">
                                             <input type="hidden" name="action" value="edit">
                                             <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
                                             <button type="submit" class="btn btn-edit">Edit</button>
                                         </form>
-                                        <form action="<%= request.getContextPath() %>/proses/kelolaKamarServlet" method="post" style="display:inline;">
+                                        <form action="<%= request.getContextPath() %>/kelolaKamarServlet" method="post" style="display:inline;">
                                             <input type="hidden" name="action" value="delete">
                                             <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
                                             <button type="submit" class="btn btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?')">Delete</button>
@@ -396,11 +428,38 @@
                 <h3>Tambah Kamar Baru</h3>
                 <form action="kelolaKamarServlet" method="post">
                     <input type="hidden" name="action" value="add">
-                    <input type="text" name="nomorKamar" placeholder="TomorKamar" required>
-                    <input type="text" name="tipeKamar" placeholder="TipeKamar" required>
-                    <input type="text" name="tipeBed" placeholder="TipeBed" required>
-                    <input type="text" name="harga" placeholder="Harga" required>
-                    <input type="text" name="status" placeholder="Status" value="Avaible" hidden>
+
+                    <label for="nomorKamar">Nomor Kamar:</label>
+                    <input type="text" id="nomorKamar" name="nomorKamar" placeholder="Nomor Kamar" required>
+
+                    <label for="tipeKamar">Tipe Kamar:</label>
+                    <select id="tipeKamar" name="tipeKamar" required>
+                        <option value="" disabled selected>Pilih Tipe Kamar</option>
+                        <option value="Standard Non AC">Standard Non AC</option>
+                        <option value="Standard AC">Standard AC</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Junior Suite">Junior Suite</option>
+                        <option value="Family">Family</option>
+                        <option value="Executive">Executive</option>
+                        <option value="Presidental Suite">Presidental Suite</option>
+                    </select>
+
+                    <label for="tipeBed">Tipe Bed:</label>
+                    <select id="tipeBed" name="tipeBed" required>
+                        <option value="" disabled selected>Pilih Tipe Bed</option>
+                        <option value="Single Bed">Single Bed</option>
+                        <option value="Double Bed">Double Bed</option>
+                        <option value="Twin Bed">Twin Bed</option>
+                        <option value="King Bed">King Bed</option>
+                        <option value="Queen Bed">Queen Bed</option>
+                    </select>
+
+                    <label for="harga">Harga:</label>
+                    <input type="text" id="harga" name="harga" placeholder="Harga" required>
+
+                    <input type="hidden" name="status" value="Avaible">
+
                     <button type="submit">Tambah</button>
                 </form>
             </div>
