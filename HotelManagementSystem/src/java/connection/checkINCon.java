@@ -27,32 +27,31 @@ public class CheckINCon {
     }
 
     // 1. Tambah Data Check-IN
-    public boolean addCheckIN(CheckIN checkIN) {
-        String sql = "INSERT INTO checkin (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void insertCheckIN(checkIN checkIN) throws SQLException {
+        String sql = "INSERT INTO checkin (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        
         try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, checkIN.getNama());
+            stmt.setString(2, checkIN.getNomorTelepon());
+            stmt.setString(3, checkIN.getKewarganegaraan());
+            stmt.setString(4, checkIN.getGender());
+            stmt.setString(5, checkIN.getEmail());
+            stmt.setString(6, checkIN.getIdKtp());
+            stmt.setString(7, checkIN.getAlamat());
+            stmt.setString(8, checkIN.getCheckIN_Date());
+            stmt.setString(9, checkIN.getBed());
+            stmt.setString(10, checkIN.getTipeKamar());
+            stmt.setString(11, checkIN.getNomorKamar());
+            stmt.setInt(12, checkIN.getHarga());
 
-            // Mengatur parameter query
-            ps.setString(1, checkIN.getNama());
-            ps.setString(2, checkIN.getNomorTelepon());
-            ps.setString(3, checkIN.getKewarganegaraan());
-            ps.setString(4, checkIN.getGender());
-            ps.setString(5, checkIN.getEmail());
-            ps.setString(6, checkIN.getIdKtp());
-            ps.setString(7, checkIN.getAlamat());
-            ps.setString(8, checkIN.getCheckIN_Date());
-            ps.setString(9, checkIN.getBed());
-            ps.setString(10, checkIN.getTipeKamar());
-            ps.setString(11, checkIN.getNomorKamar());
-            ps.setInt(12, checkIN.getHarga());
-
-            // Eksekusi query
-            return ps.executeUpdate() > 0;
-
+            stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            throw new SQLException("Error inserting CheckIN data: " + e.getMessage());
         }
+    }
     }
 
     // 2. Menampilkan Semua Data Check-IN
