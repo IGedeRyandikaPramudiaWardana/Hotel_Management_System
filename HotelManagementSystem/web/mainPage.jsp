@@ -160,7 +160,7 @@
                 <!-- Menu Main Page -->
                 <a onclick="location.href='mainPageServlet'">Main Page</a>
                 <a onclick="location.href='kelolaKamarServlet'">Kelola Kamar</a>
-                <a href="#" onclick="loadContent('checkin.jsp')">Check-In</a>
+                <a onclick="location.href='checkINHandler2'">Check-In</a>
                 <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
                 <a href="#" onclick="loadContent('kelolaCheckIN.jsp')">Kelola Check-IN</a>

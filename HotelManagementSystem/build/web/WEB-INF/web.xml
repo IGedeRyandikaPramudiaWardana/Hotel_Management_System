@@ -7,7 +7,7 @@
 
     <servlet-mapping>
         <servlet-name>kelolaKamarServlet</servlet-name>
-        <url-pattern>/proses/kelolaKamarServlet</url-pattern>
+        <url-pattern>/kelolaKamarServlet</url-pattern>
     </servlet-mapping>
 
 
