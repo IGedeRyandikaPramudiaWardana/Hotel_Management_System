@@ -4,11 +4,13 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  * Model untuk Check-IN
  * @author LENOVO
  */
-public class CheckIN {
+public class checkIN {
     private String nama;
     private String nomorTelepon;
     private String kewarganegaraan;
@@ -16,16 +18,16 @@ public class CheckIN {
     private String email;
     private String idKtp;
     private String alamat;
-    private String checkIN_Date;
+    private Date checkIN_Date;
     private String bed;
     private String tipeKamar;
     private String nomorKamar;
-    private int harga;
+    private double harga;
 
     // Konstruktor
-    public CheckIN(String nama, String nomorTelepon, String kewarganegaraan, String gender, 
-                   String email, String idKtp, String alamat, String checkIN_Date, 
-                   String bed, String tipeKamar, String nomorKamar, int harga) {
+    public checkIN(String nama, String nomorTelepon, String kewarganegaraan, String gender, 
+                   String email, String idKtp, String alamat, Date checkIN_Date, 
+                   String bed, String tipeKamar, String nomorKamar, double harga) {
         this.nama = nama;
         this.nomorTelepon = nomorTelepon;
         this.kewarganegaraan = kewarganegaraan;
@@ -97,11 +99,11 @@ public class CheckIN {
         this.alamat = alamat;
     }
 
-    public String getCheckIN_Date() {
+    public Date getCheckIN_Date() {
         return checkIN_Date;
     }
 
-    public void setCheckIN_Date(String checkIN_Date) {
+    public void setCheckIN_Date(Date checkIN_Date) {
         this.checkIN_Date = checkIN_Date;
     }
 
@@ -129,7 +131,7 @@ public class CheckIN {
         this.nomorKamar = nomorKamar;
     }
 
-    public int getHarga() {
+    public double getHarga() {
         return harga;
     }
 

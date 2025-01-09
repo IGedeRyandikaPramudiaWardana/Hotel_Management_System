@@ -4,160 +4,96 @@
  */
 package connection;
 
-import model.CheckIN;
+import model.checkIN;
+import model.kamar;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-/**
- * DAO untuk CheckIN
- * Mengelola operasi CRUD pada tabel 'checkin'
- */
-public class CheckINCon {
-
-    // Konfigurasi database
+public class checkINCon {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/test3";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "";
+    private static final Logger LOGGER = Logger.getLogger(checkINCon.class.getName());
 
-    // Membuat koneksi ke database
-    private Connection getConnection() throws SQLException {
+    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
     }
 
-    // 1. Tambah Data Check-IN
-    public void insertCheckIN(checkIN checkIN) throws SQLException {
-        String sql = "INSERT INTO checkin (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
-                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            
-            stmt.setString(1, checkIN.getNama());
-            stmt.setString(2, checkIN.getNomorTelepon());
-            stmt.setString(3, checkIN.getKewarganegaraan());
-            stmt.setString(4, checkIN.getGender());
-            stmt.setString(5, checkIN.getEmail());
-            stmt.setString(6, checkIN.getIdKtp());
-            stmt.setString(7, checkIN.getAlamat());
-            stmt.setString(8, checkIN.getCheckIN_Date());
-            stmt.setString(9, checkIN.getBed());
-            stmt.setString(10, checkIN.getTipeKamar());
-            stmt.setString(11, checkIN.getNomorKamar());
-            stmt.setInt(12, checkIN.getHarga());
+    public void addCheckin(checkIN ckin) {
+        String sql = "INSERT INTO checkin (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        LOGGER.info("Executing query: " + sql);
 
-            stmt.executeUpdate();
+        try (Connection conn = getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, ckin.getNama());
+            ps.setString(2, ckin.getNomorTelepon());
+            ps.setString(3, ckin.getKewarganegaraan());
+            ps.setString(4, ckin.getGender());
+            ps.setString(5, ckin.getEmail());
+            ps.setString(6, ckin.getIdKtp());
+            ps.setString(7, ckin.getAlamat());
+            ps.setDate(8, (Date) ckin.getCheckIN_Date());
+            ps.setString(9, ckin.getBed());
+            ps.setString(10, ckin.getTipeKamar());
+            ps.setString(11, ckin.getNomorKamar());
+            ps.setDouble(12, ckin.getHarga());  // Perbaiki indeks parameter di sini
+
+            int rowsAffected = ps.executeUpdate();
+            if (rowsAffected > 0) {
+                LOGGER.info("Data berhasil ditambahkan: " + ckin.getIdKtp());
+                updateStatusKamar(ckin.getNomorKamar(), "Check In");
+            } else {
+                LOGGER.warning("Data tidak berhasil ditambahkan: " + ckin.getNomorKamar());
+            }
         } catch (SQLException e) {
-            throw new SQLException("Error inserting CheckIN data: " + e.getMessage());
+            LOGGER.severe("Database error: " + e.getMessage());
+            e.printStackTrace();
         }
     }
-    }
 
-    // 2. Menampilkan Semua Data Check-IN
-    public List<CheckIN> getAllCheckIN() {
-        List<CheckIN> checkINList = new ArrayList<>();
-        String sql = "SELECT * FROM checkin";
+    public List<kamar> getAvailableKamar() {
+        List<kamar> kamarList = new ArrayList<>();  // Ganti nama variabel menjadi kamarList untuk menghindari konflik
+        String sql = "SELECT * FROM avaibility WHERE status='Avaible'";  // Pastikan nama tabel sesuai dengan yang ada di DB
 
         try (Connection conn = getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                CheckIN checkIN = new CheckIN(
-                        rs.getString("nama"),
-                        rs.getString("nomorTelepon"),
-                        rs.getString("kewarganegaraan"),
-                        rs.getString("gender"),
-                        rs.getString("email"),
-                        rs.getString("idKtp"),
-                        rs.getString("alamat"),
-                        rs.getString("checkIN_Date"),
-                        rs.getString("bed"),
-                        rs.getString("tipeKamar"),
+                kamar k = new kamar(  // Gantilah nama objek menjadi k
                         rs.getString("nomorKamar"),
-                        rs.getInt("harga")
+                        rs.getString("tipeKamar"),
+                        rs.getString("tipeBed"),
+                        rs.getDouble("harga"),
+                        rs.getString("status")
                 );
-                checkINList.add(checkIN);
+                kamarList.add(k);  // Tambahkan objek kamar ke daftar
             }
         } catch (SQLException e) {
+            LOGGER.severe("Database error: " + e.getMessage());
             e.printStackTrace();
         }
-        return checkINList;
+
+        return kamarList;
     }
 
-    // 3. Mengambil Data Berdasarkan ID/KTP
-    public CheckIN getCheckINById(String idKtp) {
-        String sql = "SELECT * FROM checkin WHERE idKtp = ?";
-        CheckIN checkIN = null;
+    private void updateStatusKamar(String nomorKamar, String status) {
+        String sql = "UPDATE checkin SET status=? WHERE nomorKamar=?";
 
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setString(1, idKtp);
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                checkIN = new CheckIN(
-                        rs.getString("nama"),
-                        rs.getString("nomorTelepon"),
-                        rs.getString("kewarganegaraan"),
-                        rs.getString("gender"),
-                        rs.getString("email"),
-                        rs.getString("idKtp"),
-                        rs.getString("alamat"),
-                        rs.getString("checkIN_Date"),
-                        rs.getString("bed"),
-                        rs.getString("tipeKamar"),
-                        rs.getString("nomorKamar"),
-                        rs.getInt("harga")
-                );
-            }
+            ps.setString(1, status);
+            ps.setString(2, nomorKamar);
+            ps.executeUpdate();
+            LOGGER.info("Status kendaraan berhasil diperbarui: " + nomorKamar + " menjadi " + status);
         } catch (SQLException e) {
+            LOGGER.severe("Database error: " + e.getMessage());
             e.printStackTrace();
-        }
-        return checkIN;
-    }
-
-    // 4. Mengupdate Data Check-IN
-    public boolean updateCheckIN(CheckIN checkIN) {
-        String sql = "UPDATE checkin SET nama = ?, nomorTelepon = ?, kewarganegaraan = ?, gender = ?, email = ?, alamat = ?, checkIN_Date = ?, bed = ?, tipeKamar = ?, nomorKamar = ?, harga = ? WHERE idKtp = ?";
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, checkIN.getNama());
-            ps.setString(2, checkIN.getNomorTelepon());
-            ps.setString(3, checkIN.getKewarganegaraan());
-            ps.setString(4, checkIN.getGender());
-            ps.setString(5, checkIN.getEmail());
-            ps.setString(6, checkIN.getAlamat());
-            ps.setString(7, checkIN.getCheckIN_Date());
-            ps.setString(8, checkIN.getBed());
-            ps.setString(9, checkIN.getTipeKamar());
-            ps.setString(10, checkIN.getNomorKamar());
-            ps.setInt(11, checkIN.getHarga());
-            ps.setString(12, checkIN.getIdKtp());
-
-            return ps.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    // 5. Menghapus Data Check-IN
-    public boolean deleteCheckIN(String idKtp) {
-        String sql = "DELETE FROM checkin WHERE idKtp = ?";
-        try (Connection conn = getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-
-            ps.setString(1, idKtp);
-            return ps.executeUpdate() > 0;
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
         }
     }
 }

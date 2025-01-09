@@ -116,39 +116,24 @@
             </thead>
             <tbody>
                 <%
-                    // Koneksi ke database
-                    Connection conn = null;
-                    Statement stmt = null;
-                    ResultSet rs = null;
+                    // Ambil data check-in yang dikirim dari servlet
+                    List<checkIN> checkinList = (List<checkIN>) request.getAttribute("checkinList");
 
-                    try {
-                        // Load driver
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-
-                        // Ubah username dan password sesuai dengan database Anda
-                        String url = "jdbc:mysql://localhost:3306/check";
-                        String user = "root"; // username MySQL Anda
-                        String password = ""; // password MySQL Anda (kosong jika default)
-
-                        conn = DriverManager.getConnection(url, user, password);
-                        stmt = conn.createStatement();
-                        String sql = "SELECT * FROM `checkin`";
-                        rs = stmt.executeQuery(sql);
-
-                        while (rs.next()) {
-                            String nama = rs.getString("nama");
-                            String nomorTelepon = rs.getString("nomorTelepon");
-                            String kewarganegaraan = rs.getString("kewarganegaraan");
-                            String gender = rs.getString("gender");
-                            String email = rs.getString("email");
-                            String idKtp = rs.getString("idKtp");
-                            String alamat = rs.getString("alamat");
-                            String checkIN_Date = rs.getString("checkIN_Date");
-                            String bed = rs.getString("bed");
-                            String tipeKamar = rs.getString("tipeKamar");
-                            String nomorKamar = rs.getString("nomorKamar");
-                            int harga = rs.getInt("harga");
-                            
+                    // Jika ada data
+                    if (checkinList != null) {
+                        for (checkIN checkin : checkinList) {
+                            String nama = checkin.getNama();
+                            String nomorTelepon = checkin.getNomorTelepon();
+                            String kewarganegaraan = checkin.getKewarganegaraan();
+                            String gender = checkin.getGender();
+                            String email = checkin.getEmail();
+                            String idKtp = checkin.getIdKtp();
+                            String alamat = checkin.getAlamat();
+                            Date checkIN_Date = checkin.getCheckIN_Date();
+                            String bed = checkin.getBed();
+                            String tipeKamar = checkin.getTipeKamar();
+                            String nomorKamar = checkin.getNomorKamar();
+                            double harga = checkin.getHarga();
                 %>
                 <tr>
                     <td><%= nama %></td>
@@ -170,18 +155,10 @@
                 </tr>
                 <%
                         }
-                    } catch (ClassNotFoundException e) {
-                        out.println("<tr><td colspan='6'>Error: Driver tidak ditemukan!</td></tr>");
-                    } catch (SQLException e) {
-                        out.println("<tr><td colspan='6'>Error: Tidak dapat terhubung ke database!</td></tr>");
-                    } finally {
-                        try {
-                            if (rs != null) rs.close();
-                            if (stmt != null) stmt.close();
-                            if (conn != null) conn.close();
-                        } catch (SQLException e) {
-                            e.printStackTrace();
-                        }
+                    } else {
+                %>
+                <tr><td colspan="12">Tidak ada data check-in.</td></tr>
+                <%
                     }
                 %>
             </tbody>
