@@ -54,7 +54,7 @@ public class kelolaKamarServlet extends HttpServlet {
         LOGGER.info("Data diterima: " + nomorKamar + ", " + tipeKamar + ", " + tipeBed + ", " + harga + ", " + status);
 
         // Buat objek kendaraan dan simpan ke database
-        kamar k = new kamar(nomorKamar, tipeKamar, tipeBed, harga, status);
+        kamar k = new kamar(nomorKamar, tipeKamar, tipeBed, rs.getInt("stok"), harga, status);
         kamarCon.addKamar(k);
 
         // Redirect kembali ke halaman daftar kendaraan

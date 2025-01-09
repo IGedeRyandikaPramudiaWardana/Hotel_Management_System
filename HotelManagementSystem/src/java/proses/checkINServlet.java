@@ -5,6 +5,8 @@
 package proses;
 
 import connection.checkINCon;
+import connection.kamarCon;
+import jakarta.servlet.RequestDispatcher;
 import model.checkIN;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -13,10 +15,39 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
+import java.util.logging.Logger;
+import model.kamar;
 
 @WebServlet("/checkINServlet")
 public class checkINServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final Logger LOGGER = Logger.getLogger(kelolaKamarServlet.class.getName());
+    private kamarCon kamarCon = new kamarCon();
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            // Ambil data kamar dari database melalui kamarCon
+            List<String> bedList = kamarCon.getAllBedTypes();  // Mendapatkan tipe bed
+            List<String> tipeKamarList = kamarCon.getAllRoomTypes();  // Mendapatkan tipe kamar
+            List<String> nomorKamarList = kamarCon.getAvailableRoomNumbers();  // Mendapatkan nomor kamar
+            List<Double> hargaList = kamarCon.getRoomPrices();  // Mendapatkan harga kamar
+
+            // Set data sebagai atribut untuk dikirim ke JSP
+            request.setAttribute("bedList", bedList);
+            request.setAttribute("tipeKamarList", tipeKamarList);
+            request.setAttribute("nomorKamarList", nomorKamarList);
+            request.setAttribute("hargaList", hargaList);
+
+            // Forward ke JSP untuk ditampilkan
+            RequestDispatcher dispatcher = request.getRequestDispatcher("checkin.jsp");
+            dispatcher.forward(request, response);
+
+        } catch (SQLException e) {
+            LOGGER.severe("Error in database operation: " + e.getMessage());
+            throw new ServletException("Database error", e);
+        }
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Ambil data dari form HTML
@@ -31,7 +62,7 @@ public class checkINServlet extends HttpServlet {
         String bed = request.getParameter("bed");
         String tipeKamar = request.getParameter("tipeKamar");
         String nomorKamar = request.getParameter("nomorKamar");
-        int harga = Integer.parseInt(request.getParameter("harga"));
+        double harga = Double.parseDouble(request.getParameter("harga"));
 
         // Buat objek checkIN
         checkIN checkIN = new checkIN(nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga);
@@ -40,7 +71,7 @@ public class checkINServlet extends HttpServlet {
         checkINCon dao = new checkINCon();
         try {
             dao.insertCheckIN(checkIN);
-            response.sendRedirect("checkin_success.jsp");
+            response.sendRedirect("checkin.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
             response.sendRedirect("checkin_failure.jsp");

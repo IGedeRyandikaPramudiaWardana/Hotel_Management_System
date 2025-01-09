@@ -8,7 +8,6 @@ package proses;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import jakarta.servlet.ServletException;
@@ -16,19 +15,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import connection.DatabaseConnection;
-
+import connection.checkINCon;  // Pastikan untuk mengimpor class koneksi yang benar
 
 @WebServlet("/CheckINHandler2") // Mapping URL untuk servlet
 public class CheckINHandler2 extends HttpServlet {
     
     private static final long serialVersionUID = 1L;
-
-    // Konfigurasi database
-//    private static final String DB_URL = "jdbc:mysql://localhost:3306/check";
-//    private static final String DB_USER = "root";
-//    private static final String DB_PASSWORD = "";
-    Connection conn = DatabaseConnection.getConnection();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -50,7 +42,7 @@ public class CheckINHandler2 extends HttpServlet {
             String bed = request.getParameter("bed");
             String tipeKamar = request.getParameter("tipeKamar");
             String nomorKamar = request.getParameter("nomorKamar");
-            String hargaStr = request.getParameter("harga");
+            double harga = Double.parseDouble(request.getParameter("harga"));
 
             // Validasi input
             if (nama == null || nama.isEmpty() || nomorTelepon == null || nomorTelepon.isEmpty()) {
@@ -58,15 +50,13 @@ public class CheckINHandler2 extends HttpServlet {
                 return;
             }
 
-            int harga = Integer.parseInt(hargaStr); // Konversi harga ke integer
-
-            // Koneksi ke database
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            // Koneksi ke database menggunakan checkINCon
+            Connection conn = checkINCon.getConnection();  // Pastikan method getConnection() ada di class checkINCon
 
             // Query SQL untuk menyimpan data
             String sql = "INSERT INTO `checkin` (nama, nomorTelepon, kewarganegaraan, gender, email, idKtp, alamat, checkIN_Date, bed, tipeKamar, nomorKamar, harga) "
                     + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            
             PreparedStatement ps = conn.prepareStatement(sql);
 
             // Set parameter query
@@ -81,7 +71,7 @@ public class CheckINHandler2 extends HttpServlet {
             ps.setString(9, bed);
             ps.setString(10, tipeKamar);
             ps.setString(11, nomorKamar);
-            ps.setInt(12, harga);
+            ps.setDouble(12, harga);
 
             // Eksekusi query
             int result = ps.executeUpdate();

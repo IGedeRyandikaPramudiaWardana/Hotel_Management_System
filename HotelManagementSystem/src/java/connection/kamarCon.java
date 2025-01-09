@@ -38,7 +38,7 @@ public class kamarCon {
                 kamar k = new kamar(
                         rs.getString("nomorKamar"),
                         rs.getString("tipeKamar"),
-                        rs.getString("tipeBed"),
+                        rs.getString("tipeBed"), 
                         rs.getDouble("harga"),
                         rs.getString("status")
                 );
@@ -131,7 +131,7 @@ public class kamarCon {
     public List<String> getEnumValues(String columnName) {
         List<String> enumValues = new ArrayList<>();
         String query = "SHOW COLUMNS FROM avaibility WHERE Field = ?";
-        try (Connection connection = DatabaseConnection.getConnection();
+        try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setString(1, columnName);
             ResultSet resultSet = statement.executeQuery();
@@ -146,6 +146,58 @@ public class kamarCon {
             e.printStackTrace();
         }
         return enumValues;
+    }
+    
+    public List<String> getAllBedTypes() throws SQLException {
+        List<String> bedList = new ArrayList<>();
+        String sql = "SELECT DISTINCT tipeBed FROM avaibility";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                bedList.add(rs.getString("tipeBed"));
+            }
+        }
+        return bedList;
+    }
+
+    public List<String> getAllRoomTypes() throws SQLException {
+        List<String> tipeKamarList = new ArrayList<>();
+        String sql = "SELECT DISTINCT tipeKamar FROM avaibility";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                tipeKamarList.add(rs.getString("tipeKamar"));
+            }
+        }
+        return tipeKamarList;
+    }
+
+    public List<String> getAvailableRoomNumbers() throws SQLException {
+        List<String> nomorKamarList = new ArrayList<>();
+        String sql = "SELECT nomorKamar FROM avaibility WHERE status = 'Available'";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                nomorKamarList.add(rs.getString("nomorKamar"));
+            }
+        }
+        return nomorKamarList;
+    }
+
+    public List<Double> getRoomPrices() throws SQLException {
+        List<Double> hargaList = new ArrayList<>();
+        String sql = "SELECT harga FROM avaibility WHERE status = 'Available'";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                hargaList.add(rs.getDouble("harga"));
+            }
+        }
+        return hargaList;
     }
 
 }
