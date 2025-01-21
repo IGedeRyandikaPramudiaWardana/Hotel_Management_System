@@ -391,12 +391,12 @@
                                     <td>Rp <%= String.format("%,.2f", kamar.getHarga()) %></td>
                                     <td><%= kamar.getStatus() %></td>
                                     <td>
-                                        <form action="<%= request.getContextPath() %>/kelolaKamarServlet" method="post" style="display:inline;">
+                                        <form action="<%= request.getContextPath() %>/kelolaKamarServlet" style="display:inline;">
                                             <input type="hidden" name="action" value="edit">
-                                            <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
-                                            <button type="submit" class="btn btn-edit">Edit</button>
+<!--                                            <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">-->
+                                            <button type="submit" class="btn btn-edit" onclick="showModal2(<%= kamar.getNomorKamar() %>)">Edit</button>
                                         </form>
-                                        <form action="<%= request.getContextPath() %>/kelolaKamarServlet" method="post" style="display:inline;">
+                                        <form action="<%= request.getContextPath() %>/DeleteServlet" method="post" style="display:inline;">
                                             <input type="hidden" name="action" value="delete">
                                             <input type="hidden" name="nomorKamar" value="<%= kamar.getNomorKamar() %>">
                                             <button type="submit" class="btn btn-delete" onclick="return confirm('Apakah Anda yakin ingin menghapus kamar ini?')">Delete</button>
@@ -420,6 +420,50 @@
         <div class="add-stock">
             <button onclick="showModal()">Tambah Kamar Baru</button>
             
+        </div>
+                
+                
+        <div id="editModal" class="modal2">
+            <div class="modal-content">
+                <h3>Edit Kamar</h3>
+                <form action="EditKamarServlet" method="post">
+                    <input type="hidden" name="nomorKamarLama" value="nomorKamarLama">
+                    <input type="hidden" name="action" value="add">
+
+                    <label for="nomorKamar">Nomor Kamar:</label>
+                    <input type="text" id="nomorKamar" name="nomorKamar" placeholder="Nomor Kamar" required>
+
+                    <label for="tipeKamar">Tipe Kamar:</label>
+                    <select id="tipeKamar" name="tipeKamar" required>
+                        <option value="" disabled selected>Pilih Tipe Kamar</option>
+                        <option value="Standard Non AC">Standard Non AC</option>
+                        <option value="Standard AC">Standard AC</option>
+                        <option value="Deluxe">Deluxe</option>
+                        <option value="Suite">Suite</option>
+                        <option value="Junior Suite">Junior Suite</option>
+                        <option value="Family">Family</option>
+                        <option value="Executive">Executive</option>
+                        <option value="Presidental Suite">Presidental Suite</option>
+                    </select>
+
+                    <label for="tipeBed">Tipe Bed:</label>
+                    <select id="tipeBed" name="tipeBed" required>
+                        <option value="" disabled selected>Pilih Tipe Bed</option>
+                        <option value="Single Bed">Single Bed</option>
+                        <option value="Double Bed">Double Bed</option>
+                        <option value="Twin Bed">Twin Bed</option>
+                        <option value="King Bed">King Bed</option>
+                        <option value="Queen Bed">Queen Bed</option>
+                    </select>
+
+                    <label for="harga">Harga:</label>
+                    <input type="text" id="harga" name="harga" placeholder="Harga" required>
+
+                    <input type="hidden" name="status" value="Avaible">
+
+                    <button type="submit">Konfirmasi</button>
+                </form>
+            </div>
         </div>
                 
                 
@@ -482,10 +526,28 @@
                 console.log("Modal ditutup");
             }
         };
+    </script>
+    
+    <script>
+        function showModal2(String nomorKamarLama) {
+            const modal = document.getElementById('editModal');
+            modal.classList.add('show');
+            console.log("Modal ditampilkan");
+        }
+
+        // Menutup modal saat klik di luar modal
+        window.onclick = function(event) {
+            const modal = document.getElementById('editModal');
+            if (event.target == modal) {
+                modal.classList.remove('show');
+                console.log("Modal ditutup");
+            }
+        };
     </script> 
         <!-- Tambah Kamar Baru -->
 <!--        <a href="tambahKamar.jsp" class="btn-add">Tambah Kamar Baru</a>-->
     <script>
+        
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');

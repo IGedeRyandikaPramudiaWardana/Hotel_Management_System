@@ -79,8 +79,8 @@ public class kamarCon {
     }
 
     // Mengedit data kamar
-    public void updateKamar(kamar k) {
-        String sql = "UPDATE avaibility SET tipeKamar = ?, tipeBed = ?, harga = ?, status = ? WHERE nomorKamar = ?";
+    public void updateKamar(String kamarLama,kamar k) {
+        String sql = "UPDATE avaibility SET nomorKamar = ?, tipeKamar = ?, tipeBed = ?, harga = ?, status = ? WHERE nomorKamar = ?";
         LOGGER.info("Executing query: " + sql);
         
         try (Connection conn = getConnection();
@@ -92,6 +92,7 @@ public class kamarCon {
             ps.setDouble(4, k.getHarga());
             ps.setString(5, k.getStatus());
             
+            ps.setString(6, kamarLama);
             int rowsAffected = ps.executeUpdate();
             if(rowsAffected > 0){
                 LOGGER.info("Data berhasil ditambahkan: " + k.getNomorKamar());
@@ -108,7 +109,7 @@ public class kamarCon {
 
     // Menghapus data kamar
     public void deleteKamar(String nomorKamar) {
-        String sql = "DELETE FROM avaibility WHERE nomorKamar = ?";
+        String sql = "DELETE FROM avaibility WHERE avaibility . nomorKamar = ?";
         try (Connection conn = getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
 

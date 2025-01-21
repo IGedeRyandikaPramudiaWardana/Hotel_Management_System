@@ -163,7 +163,7 @@
                 <a onclick="location.href='CheckINHandler'">Check-In</a>
                 <a href="#" onclick="loadContent('checkOut.jsp')">Check-Out</a>
                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
-                <a href="#" onclick="loadContent('kelolaCheckIN.jsp')">Kelola Check-IN</a>
+                <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
                 <a href="login.jsp">Logout</a>
                 <% if ("admin".equals(akses)) { %>
                     <!-- Menu khusus admin -->

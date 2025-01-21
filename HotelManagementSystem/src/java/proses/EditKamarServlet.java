@@ -4,47 +4,29 @@
  */
 package proses;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import connection.kamarCon;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.SQLException;
 import java.util.logging.Logger;
-
 import model.kamar;
-import connection.DatabaseConnection;
-import connection.kamarCon;
 
-/**
- *
- * @author ASUS
- */
-@WebServlet(name = "kelolaKamarServlet", urlPatterns = {"/kelolaKamarServlet"})
-public class kelolaKamarServlet extends HttpServlet {
+@WebServlet(name = "EditKamarServlet", urlPatterns = {"/EditKamarServlet"})
+public class EditKamarServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final Logger LOGGER = Logger.getLogger(kelolaKamarServlet.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(DeleteServlet.class.getName());
     private kamarCon kamarCon = new kamarCon();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        LOGGER.info("doGet called");
-        List<kamar> kamarList = kamarCon.getAllKamar();
-        request.setAttribute("kamarList", kamarList);
-        request.getRequestDispatcher("/kelolaKamar.jsp").forward(request, response);
-    }
-
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOGGER.info("doPost called");
         
         // Ambil data dari form
         String nomorKamar = request.getParameter("nomorKamar");
+        String nomorKamarLama = request.getParameter("nomorKamarLama");
         String tipeKamar = request.getParameter("tipeKamar");
         String tipeBed = request.getParameter("tipeBed");
         //int harga = Integer.parseInt(request.getParameter(""));
@@ -55,7 +37,7 @@ public class kelolaKamarServlet extends HttpServlet {
 
         // Buat objek kendaraan dan simpan ke database
         kamar k = new kamar(nomorKamar, tipeKamar, tipeBed, harga, status);
-        kamarCon.addKamar(k);
+        kamarCon.updateKamar(nomorKamarLama, k);
 
         // Redirect kembali ke halaman daftar kendaraan
         response.sendRedirect("kelolaKamarServlet");

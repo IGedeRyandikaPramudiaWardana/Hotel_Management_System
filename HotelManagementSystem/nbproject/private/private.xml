@@ -4,9 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckIN.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/CheckINHandler.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/tambahKamarServlet.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar2.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/model/user.java</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/checkINCon.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/WEB-INF/connector2.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaKamar.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/DatabaseConnection.java</file>
@@ -14,10 +16,12 @@
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/loginServlet.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/CheckOUTHandler.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckIN2.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/model/checkIN.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/connection/kamarCon.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/kelolaCheckOUT.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkin.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/mainPage.jsp</file>
+            <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/checkINServlet.java</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/checkOut.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/web/CheckINHandlerOri.jsp</file>
             <file>file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/src/java/proses/CheckINHandler2.java</file>

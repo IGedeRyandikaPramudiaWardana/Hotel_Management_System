@@ -36,6 +36,7 @@ public class CheckINHandler extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LOGGER.info("doPost called");
+        
 
         // Ambil data dari form
         String nama = request.getParameter("nama");
