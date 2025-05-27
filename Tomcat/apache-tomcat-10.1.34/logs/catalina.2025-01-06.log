@@ -1,0 +1,941 @@
+06-Jan-2025 22:35:04.619 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.34
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Dec 5 2024 16:01:16 UTC
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.34.0
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 11
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.13+10-LTS-268
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34
+06-Jan-2025 22:35:04.623 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34
+06-Jan-2025 22:35:04.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\logging.properties
+06-Jan-2025 22:35:04.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+06-Jan-2025 22:35:04.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+06-Jan-2025 22:35:04.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+06-Jan-2025 22:35:04.630 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34
+06-Jan-2025 22:35:04.631 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\temp
+06-Jan-2025 22:35:04.762 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+06-Jan-2025 22:35:04.767 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+06-Jan-2025 22:35:04.936 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+06-Jan-2025 22:35:04.956 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [459] milliseconds
+06-Jan-2025 22:35:04.985 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+06-Jan-2025 22:35:04.985 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.34]
+06-Jan-2025 22:35:05.000 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\docs]
+06-Jan-2025 22:35:05.233 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\docs] has finished in [248] ms
+06-Jan-2025 22:35:05.233 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\examples]
+06-Jan-2025 22:35:05.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\examples] has finished in [440] ms
+06-Jan-2025 22:35:05.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\host-manager]
+06-Jan-2025 22:35:05.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\host-manager] has finished in [25] ms
+06-Jan-2025 22:35:05.698 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\manager]
+06-Jan-2025 22:35:05.721 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\manager] has finished in [23] ms
+06-Jan-2025 22:35:05.721 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\ROOT]
+06-Jan-2025 22:35:05.738 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\webapps\ROOT] has finished in [16] ms
+06-Jan-2025 22:35:05.740 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+06-Jan-2025 22:35:05.784 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [827] milliseconds
+06-Jan-2025 22:35:07.914 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:35:07.915 WARNING [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:35:07.947 SEVERE [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Error deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+	java.lang.IllegalStateException: Error starting child
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:602)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		... 44 more
+	Caused by: java.lang.IllegalArgumentException: The servlets named [CheckINHandler] and [proses.CheckINHandler2] are both mapped to the url-pattern [/CheckINHandler2] which is not permitted
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:354)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:347)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationWebServlet(ContextConfig.java:2551)
+		at org.apache.catalina.startup.ContextConfig.processClass(ContextConfig.java:2256)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:2245)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2155)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2150)
+		at org.apache.catalina.startup.ContextConfig.processClasses(ContextConfig.java:1363)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1273)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 45 more
+06-Jan-2025 22:35:08.008 INFO [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [94] ms
+06-Jan-2025 22:35:19.456 INFO [http-nio-8080-exec-8] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:35:19.976 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:35:19.984 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:35:19.985 WARNING [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:35:20.122 INFO [http-nio-8080-exec-10] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:35:20.124 INFO [http-nio-8080-exec-10] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [139] ms
+06-Jan-2025 22:35:20.127 INFO [http-nio-8080-exec-11] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:35:52.093 WARNING [http-nio-8080-exec-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:35:52.093 WARNING [http-nio-8080-exec-2] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:35:52.384 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:35:52.599 INFO [http-nio-8080-exec-2] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:35:52.610 INFO [http-nio-8080-exec-15] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:35:52.611 WARNING [http-nio-8080-exec-15] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:35:52.756 INFO [http-nio-8080-exec-15] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:35:52.758 INFO [http-nio-8080-exec-15] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [148] ms
+06-Jan-2025 22:35:52.761 INFO [http-nio-8080-exec-9] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:39:22.674 WARNING [http-nio-8080-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:39:22.675 WARNING [http-nio-8080-exec-18] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:39:22.822 INFO [http-nio-8080-exec-25] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:39:26.000 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/HotelManagementSystem]
+06-Jan-2025 22:39:26.000 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:39:26.129 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:39:26.131 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:39:26.374 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:42:22.821 INFO [http-nio-8080-exec-26] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:42:26.267 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/HotelManagementSystem]
+06-Jan-2025 22:42:26.267 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:42:26.393 INFO [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:42:26.393 INFO [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:43:22.773 INFO [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:43:22.902 INFO [http-nio-8080-exec-26] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:43:22.903 INFO [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:44:22.795 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:44:22.919 INFO [http-nio-8080-exec-28] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:44:22.921 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:44:36.881 INFO [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:44:37.020 INFO [http-nio-8080-exec-32] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:44:37.021 INFO [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:44:37.533 INFO [http-nio-8080-exec-29] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:44:37.542 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:44:37.543 WARNING [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:44:37.664 INFO [http-nio-8080-exec-32] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:44:37.667 INFO [http-nio-8080-exec-32] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [124] ms
+06-Jan-2025 22:44:37.669 INFO [http-nio-8080-exec-31] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:45:00.445 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:45:00.447 WARNING [http-nio-8080-exec-28] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:45:00.447 WARNING [http-nio-8080-exec-28] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:45:00.580 INFO [http-nio-8080-exec-28] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:45:00.581 INFO [http-nio-8080-exec-28] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:45:01.095 INFO [http-nio-8080-exec-35] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:45:01.103 INFO [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:45:01.104 WARNING [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:45:01.232 INFO [http-nio-8080-exec-37] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:45:01.233 INFO [http-nio-8080-exec-37] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [130] ms
+06-Jan-2025 22:45:01.235 INFO [http-nio-8080-exec-21] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:45:01.440 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:46:22.787 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:46:22.788 WARNING [http-nio-8080-exec-42] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:46:22.788 WARNING [http-nio-8080-exec-42] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:46:22.914 INFO [http-nio-8080-exec-42] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:46:22.915 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:46:24.722 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:47:03.791 INFO [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:47:03.924 INFO [http-nio-8080-exec-31] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:47:03.925 INFO [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:47:22.779 INFO [http-nio-8080-exec-34] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:47:22.903 INFO [http-nio-8080-exec-34] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:47:22.905 INFO [http-nio-8080-exec-34] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:48:22.780 INFO [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:48:22.908 INFO [http-nio-8080-exec-46] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:48:22.908 INFO [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:48:23.239 INFO [http-nio-8080-exec-34] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:48:23.347 INFO [http-nio-8080-exec-34] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:48:23.347 INFO [http-nio-8080-exec-34] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:49:22.797 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 22:49:22.918 INFO [http-nio-8080-exec-42] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:49:22.918 INFO [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 22:54:27.025 INFO [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Reloading context [/HotelManagementSystem]
+06-Jan-2025 22:54:27.139 SEVERE [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Error during context [/HotelManagementSystem] restart
+	org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1469)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1435)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1665)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:299)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:973)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1172)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1176)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1154)
+		at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+		at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:305)
+		at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.lang.IllegalArgumentException: Container name cannot be null
+		at org.apache.catalina.core.ContainerBase.setName(ContainerBase.java:415)
+		at org.apache.catalina.startup.ContextConfig.configureContext(ContextConfig.java:1475)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1299)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 16 more
+06-Jan-2025 22:56:23.201 INFO [http-nio-8080-exec-54] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:56:23.216 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:56:23.216 WARNING [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:56:23.222 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+	java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:56:23.467 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Parse error in application web.xml file at [file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml]
+	org.xml.sax.SAXParseException; systemId: file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml; lineNumber: 21; columnNumber: 23; Error at line [21] column [23]: [Error converting [null] to type [java.lang.String]]
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1960)
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1992)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1037)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		... 63 more
+06-Jan-2025 22:56:23.535 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Occurred at line [21] column [23]
+06-Jan-2025 22:56:23.538 SEVERE [http-nio-8080-exec-55] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+06-Jan-2025 22:56:23.538 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+06-Jan-2025 22:56:23.538 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal Context [/HotelManagementSystem] startup failed due to previous errors
+06-Jan-2025 22:56:23.540 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [324] ms
+06-Jan-2025 22:56:23.864 INFO [http-nio-8080-exec-56] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after stop() had already been called. The second call will be ignored.
+06-Jan-2025 22:56:24.383 INFO [http-nio-8080-exec-56] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:56:24.389 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:56:24.389 WARNING [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:56:24.397 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+	java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:56:24.445 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Parse error in application web.xml file at [file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml]
+	org.xml.sax.SAXParseException; systemId: file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml; lineNumber: 21; columnNumber: 23; Error at line [21] column [23]: [Error converting [null] to type [java.lang.String]]
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1960)
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1992)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1037)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		... 63 more
+06-Jan-2025 22:56:24.507 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Occurred at line [21] column [23]
+06-Jan-2025 22:56:24.511 SEVERE [http-nio-8080-exec-55] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+06-Jan-2025 22:56:24.511 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+06-Jan-2025 22:56:24.511 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal Context [/HotelManagementSystem] startup failed due to previous errors
+06-Jan-2025 22:56:24.513 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [123] ms
+06-Jan-2025 22:56:31.633 INFO [http-nio-8080-exec-56] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after stop() had already been called. The second call will be ignored.
+06-Jan-2025 22:56:32.134 INFO [http-nio-8080-exec-56] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:56:32.141 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:56:32.142 WARNING [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:56:32.150 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.digester.Digester.endElement End event threw exception
+	java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:56:32.172 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Parse error in application web.xml file at [file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml]
+	org.xml.sax.SAXParseException; systemId: file:/D:/Java/UAS%202/Github%20repo/Hotel_Management_System/HotelManagementSystem/build/web/WEB-INF/web.xml; lineNumber: 21; columnNumber: 23; Error at line [21] column [23]: [Error converting [null] to type [java.lang.String]]
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1960)
+		at org.apache.tomcat.util.digester.Digester.createSAXException(Digester.java:1992)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1037)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:618)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanEndElement(XMLDocumentFragmentScannerImpl.java:1728)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2899)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:605)
+		at java.xml/com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:542)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:889)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:825)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+		at java.xml/com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1224)
+		at java.xml/com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:637)
+		at org.apache.tomcat.util.digester.Digester.parse(Digester.java:1529)
+		at org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml(WebXmlParser.java:119)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1248)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:599)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:571)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:654)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:635)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:484)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1703)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+		at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+		at org.apache.tomcat.util.modeler.BaseModelMBean.invoke(BaseModelMBean.java:264)
+		at java.management/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.invoke(DefaultMBeanServerInterceptor.java:814)
+		at java.management/com.sun.jmx.mbeanserver.JmxMBeanServer.invoke(JmxMBeanServer.java:802)
+		at org.apache.catalina.manager.ManagerServlet.check(ManagerServlet.java:1445)
+		at org.apache.catalina.manager.ManagerServlet.deploy(ManagerServlet.java:939)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:314)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.lang.IllegalArgumentException: Error converting [null] to type [java.lang.String]
+		at org.apache.tomcat.util.IntrospectionUtils.convert(IntrospectionUtils.java:563)
+		at org.apache.tomcat.util.descriptor.web.CallMethodMultiRule.end(WebRuleSet.java:1049)
+		at org.apache.tomcat.util.digester.Digester.endElement(Digester.java:1034)
+		... 63 more
+06-Jan-2025 22:56:32.235 SEVERE [http-nio-8080-exec-55] org.apache.tomcat.util.descriptor.web.WebXmlParser.parseWebXml Occurred at line [21] column [23]
+06-Jan-2025 22:56:32.238 SEVERE [http-nio-8080-exec-55] org.apache.catalina.startup.ContextConfig.configureStart Marking this application unavailable due to previous error(s)
+06-Jan-2025 22:56:32.238 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal One or more components marked the context as not correctly configured
+06-Jan-2025 22:56:32.238 SEVERE [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.startInternal Context [/HotelManagementSystem] startup failed due to previous errors
+06-Jan-2025 22:56:32.240 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [99] ms
+06-Jan-2025 22:57:22.693 INFO [http-nio-8080-exec-40] org.apache.catalina.util.LifecycleBase.stop The stop() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after stop() had already been called. The second call will be ignored.
+06-Jan-2025 22:57:23.207 INFO [http-nio-8080-exec-40] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:57:23.213 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:57:23.216 WARNING [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:57:23.340 INFO [http-nio-8080-exec-55] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:57:23.342 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [129] ms
+06-Jan-2025 22:57:23.344 INFO [http-nio-8080-exec-61] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:57:26.177 INFO [http-nio-8080-exec-62] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:57:26.183 INFO [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:57:26.184 WARNING [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:57:26.304 INFO [http-nio-8080-exec-63] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:57:26.306 INFO [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [123] ms
+06-Jan-2025 22:57:26.308 INFO [http-nio-8080-exec-51] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:58:05.527 WARNING [http-nio-8080-exec-63] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:58:05.527 WARNING [http-nio-8080-exec-63] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:58:05.654 INFO [http-nio-8080-exec-51] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:58:06.181 INFO [http-nio-8080-exec-55] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:58:06.189 INFO [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:58:06.190 WARNING [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:58:06.306 INFO [http-nio-8080-exec-63] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:58:06.308 INFO [http-nio-8080-exec-63] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [119] ms
+06-Jan-2025 22:58:06.309 INFO [http-nio-8080-exec-61] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:58:09.713 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:59:04.283 WARNING [http-nio-8080-exec-69] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:59:04.283 WARNING [http-nio-8080-exec-69] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:59:04.343 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:59:04.791 INFO [http-nio-8080-exec-69] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:59:04.800 INFO [http-nio-8080-exec-73] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:59:04.800 WARNING [http-nio-8080-exec-73] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:59:04.924 INFO [http-nio-8080-exec-73] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:59:04.925 INFO [http-nio-8080-exec-73] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [127] ms
+06-Jan-2025 22:59:04.927 INFO [http-nio-8080-exec-66] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 22:59:55.671 WARNING [http-nio-8080-exec-68] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 22:59:55.671 WARNING [http-nio-8080-exec-68] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:59:56.185 INFO [http-nio-8080-exec-68] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 22:59:56.194 INFO [http-nio-8080-exec-81] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 22:59:56.195 WARNING [http-nio-8080-exec-81] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 22:59:56.245 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 22:59:56.318 INFO [http-nio-8080-exec-81] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 22:59:56.318 INFO [http-nio-8080-exec-81] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [124] ms
+06-Jan-2025 22:59:56.322 INFO [http-nio-8080-exec-75] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 23:02:46.216 WARNING [http-nio-8080-exec-87] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 23:02:46.216 WARNING [http-nio-8080-exec-87] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:02:46.722 INFO [http-nio-8080-exec-87] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 23:02:46.730 INFO [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 23:02:46.731 WARNING [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 23:02:46.846 INFO [http-nio-8080-exec-86] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:02:46.848 INFO [http-nio-8080-exec-86] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [118] ms
+06-Jan-2025 23:02:46.850 INFO [http-nio-8080-exec-82] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 23:02:50.023 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:06:10.439 WARNING [http-nio-8080-exec-95] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 23:06:10.439 WARNING [http-nio-8080-exec-95] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:06:10.567 INFO [http-nio-8080-exec-93] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:06:10.862 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:06:11.096 INFO [http-nio-8080-exec-94] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 23:06:11.103 INFO [http-nio-8080-exec-95] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 23:06:11.104 WARNING [http-nio-8080-exec-95] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 23:06:11.222 INFO [http-nio-8080-exec-95] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:06:11.224 INFO [http-nio-8080-exec-95] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [121] ms
+06-Jan-2025 23:06:11.226 INFO [http-nio-8080-exec-93] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 23:06:42.356 INFO [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 23:06:42.363 INFO [http-nio-8080-exec-91] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 23:06:42.364 WARNING [http-nio-8080-exec-91] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 23:06:42.485 INFO [http-nio-8080-exec-91] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:06:42.486 INFO [http-nio-8080-exec-91] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [123] ms
+06-Jan-2025 23:06:42.488 INFO [http-nio-8080-exec-98] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 23:48:07.776 INFO [http-nio-8080-exec-113] org.apache.catalina.startup.HostConfig.undeploy Undeploying context [/HotelManagementSystem]
+06-Jan-2025 23:48:07.796 INFO [http-nio-8080-exec-115] org.apache.catalina.startup.HostConfig.deployDescriptor Deploying deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml]
+06-Jan-2025 23:48:07.797 WARNING [http-nio-8080-exec-115] org.apache.catalina.startup.HostConfig.deployDescriptor The path attribute with value [/HotelManagementSystem] in deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has been ignored
+06-Jan-2025 23:48:08.148 INFO [http-nio-8080-exec-115] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:48:08.151 INFO [http-nio-8080-exec-115] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [D:\Java\UAS 2\Tomcat\apache-tomcat-10.1.34\conf\Catalina\localhost\HotelManagementSystem.xml] has finished in [355] ms
+06-Jan-2025 23:48:08.155 INFO [http-nio-8080-exec-111] org.apache.catalina.util.LifecycleBase.start The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]] after start() had already been called. The second call will be ignored.
+06-Jan-2025 23:52:23.138 INFO [http-nio-8080-exec-117] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 23:52:23.141 WARNING [http-nio-8080-exec-117] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [HotelManagementSystem] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+06-Jan-2025 23:52:23.141 WARNING [http-nio-8080-exec-117] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [HotelManagementSystem] appears to have started a thread named [mysql-cj-abandoned-connection-cleanup] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.13/java.lang.Object.wait(Native Method)
+ java.base@17.0.13/java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:155)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+ java.base@17.0.13/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.13/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:52:23.429 INFO [http-nio-8080-exec-117] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+06-Jan-2025 23:52:23.431 INFO [http-nio-8080-exec-117] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed
+06-Jan-2025 23:52:26.826 INFO [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+	java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load []. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1394)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:985)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:116)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:83)
+		at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+06-Jan-2025 23:54:23.126 INFO [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] has started
+06-Jan-2025 23:54:23.185 SEVERE [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Exception starting Context with name [/HotelManagementSystem]
+	org.apache.catalina.LifecycleException: Failed to start component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/HotelManagementSystem]]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:406)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:179)
+		at org.apache.catalina.core.StandardContext.reload(StandardContext.java:3220)
+		at org.apache.catalina.manager.ManagerServlet.reload(ManagerServlet.java:1029)
+		at org.apache.catalina.manager.ManagerServlet.doGet(ManagerServlet.java:323)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:598)
+		at org.apache.catalina.valves.RequestFilterValve.process(RequestFilterValve.java:355)
+		at org.apache.catalina.valves.RemoteAddrValve.invoke(RemoteAddrValve.java:54)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:842)
+	Caused by: java.lang.IllegalArgumentException: The servlets named [kelolaKamarServlet] and [kelolaKamar] are both mapped to the url-pattern [/proses/kelolaKamarServlet] which is not permitted
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMappingDecoded(WebXml.java:354)
+		at org.apache.tomcat.util.descriptor.web.WebXml.addServletMapping(WebXml.java:347)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationWebServlet(ContextConfig.java:2551)
+		at org.apache.catalina.startup.ContextConfig.processClass(ContextConfig.java:2256)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsStream(ContextConfig.java:2245)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2155)
+		at org.apache.catalina.startup.ContextConfig.processAnnotationsWebResource(ContextConfig.java:2150)
+		at org.apache.catalina.startup.ContextConfig.processClasses(ContextConfig.java:1363)
+		at org.apache.catalina.startup.ContextConfig.webConfig(ContextConfig.java:1273)
+		at org.apache.catalina.startup.ContextConfig.configureStart(ContextConfig.java:973)
+		at org.apache.catalina.startup.ContextConfig.lifecycleEvent(ContextConfig.java:290)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:109)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4342)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164)
+		... 32 more
+06-Jan-2025 23:54:23.411 INFO [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Reloading Context with name [/HotelManagementSystem] is completed

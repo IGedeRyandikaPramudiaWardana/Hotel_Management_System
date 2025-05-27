@@ -1,0 +1,470 @@
+24-Jan-2025 13:40:40.949 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+24-Jan-2025 13:40:40.950 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+24-Jan-2025 13:40:40.953 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@1a9ec80e')
+24-Jan-2025 13:46:39.547 SEVERE [http-nio-8080-exec-24] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+205:         <% } else { %>
+206:             <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 13:46:39.549 SEVERE [http-nio-8080-exec-24] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [CheckINHandler] in context with path [/HotelManagementSystem] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+205:         <% } else { %>
+206:             <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p>Anda login sebagai Admin. Anda memiliki akses penuh ke semua fitur.</p>
+205:         <% } else { %>
+206:             <p>Anda login sebagai User. Anda memiliki akses terbatas.</p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 13:48:22.163 SEVERE [http-nio-8080-exec-37] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [218] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+215:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+216:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+217:                 <a href="login.jsp">Logout</a>
+218:                 <% if ("admin".equals(akses)) { %>
+219:                     <!-- Menu khusus admin -->
+220:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+221:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 13:48:22.163 SEVERE [http-nio-8080-exec-37] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [CheckINHandler] in context with path [/HotelManagementSystem] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [218] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+215:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+216:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+217:                 <a href="login.jsp">Logout</a>
+218:                 <% if ("admin".equals(akses)) { %>
+219:                     <!-- Menu khusus admin -->
+220:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+221:                 <% } %>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [218] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+215:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+216:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+217:                 <a href="login.jsp">Logout</a>
+218:                 <% if ("admin".equals(akses)) { %>
+219:                     <!-- Menu khusus admin -->
+220:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+221:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 13:49:52.271 SEVERE [http-nio-8080-exec-44] org.apache.catalina.core.ApplicationDispatcher.invoke Servlet.service() for servlet [jsp] threw exception
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p></p>
+205:         <% } else { %>
+206:             <p></p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 13:49:52.273 SEVERE [http-nio-8080-exec-44] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() for servlet [CheckINHandler] in context with path [/HotelManagementSystem] threw exception [Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p></p>
+205:         <% } else { %>
+206:             <p></p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:] with root cause
+	org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: [203] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+200: 
+201:     <!-- Header -->
+202:         <div class="header">Hotel Management System</div>
+203:         <% if ("admin".equals(akses)) { %>
+204:             <p></p>
+205:         <% } else { %>
+206:             <p></p>
+
+
+An error occurred at line: [222] in the jsp file: [/checkin.jsp]
+akses cannot be resolved to a variable
+219:                 <a href="#" onclick="loadContent('detailPembayaran.jsp')">Detail Pembayaran</a>
+220:                 <a onclick="location.href='kelolaCheckIN.jsp'">Kelola Check-IN</a>
+221:                 <a href="login.jsp">Logout</a>
+222:                 <% if ("admin".equals(akses)) { %>
+223:                     <!-- Menu khusus admin -->
+224:                     <a href="#" onclick="loadContent('adminPage.jsp')">Admin</a>
+225:                 <% } %>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:72)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:192)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:524)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:373)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:345)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:331)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:396)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:377)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:325)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:633)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:409)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:331)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:268)
+		at CheckINHandler.doGet(CheckINHandler.java:34)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:1583)
+24-Jan-2025 14:39:25.815 INFO [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+24-Jan-2025 14:39:25.815 INFO [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
